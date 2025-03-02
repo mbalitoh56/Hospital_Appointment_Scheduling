@@ -28,21 +28,23 @@ This system is easy to make and can be done with small teams or limited resource
 
 ## Login
 **Users:** 
-Must enter a username and select their role (Admin, Doctor, or Patient).
-After logging in, the user is directed to the appropriate part of the system based on their role.
-If no valid input is given, the system exits.
+- Must enter a username and select their role (Admin, Doctor, or Patient).
+- After logging in, the user is directed to the appropriate part of the system based on their role.
+- If no valid input is given, the system exits.
 
 ## Appointment Management
 **Book Appointment:**
-Patients can book appointments by entering their name, choosing a doctor, and providing the date, time, and reason for the appointment.
-The system checks if the doctor is available before confirming the appointment.
+- Patients can book appointments by entering their name, choosing a doctor, and providing the date, time, and reason for the appointment.
+- The system checks if the doctor is available before confirming the appointment.
 
 **Cancel Appointment:**
 Admins can cancel any appointment in the system.
+ 
 Notifications are sent to both the patient and doctor if an appointment is canceled.
 
 **Search Appointment:**
 Users (Admin, Doctor, and Patient) can search for appointments by patient name or doctor name.
+
 Admins can view all appointments, but doctors and patients can only view their own.
 
 ## Notifications
@@ -50,6 +52,7 @@ After booking or canceling an appointment, notifications are sent to the patient
 
 ## Data Persistence
 Appointment data is saved to a text file (appointments.txt).
+ 
 The system loads appointments from this file when started and saves any changes to the file when closed.
 
 # Non-Functional Requirements
@@ -73,19 +76,19 @@ The system loads appointments from this file when started and saves any changes 
 # User Roles and Permissions
 
 ## Admin:
-Can view all appointments.
-Can cancel any appointment.
-Can search for appointments by patient or doctor name.
+- Can view all appointments.
+- Can cancel any appointment.
+- Can search for appointments by patient or doctor name.
 
 ## Doctor:
-Can view appointments with their name listed as the doctor.
-Can search for appointments by patient or doctor name.
-Cannot book or cancel appointments.
+- Can view appointments with their name listed as the doctor.
+- Can search for appointments by patient or doctor name.
+- Cannot book or cancel appointments.
 
 ## Patient:
-Can book new appointments with doctors.
-Can view only their own appointments.
-Can search for appointments by their own name or the doctor's name.
+- Can book new appointments with doctors.
+- Can view only their own appointments.
+- Can search for appointments by their own name or the doctor's name.
 
 # User Interface (UI)
 
@@ -93,31 +96,32 @@ The User Interface (UI) is built using Java Swing and includes the following fea
 
 **Login Screen:** Users enter their username and choose their role.
 **Main Screen:** Displays a list of appointments and provides buttons for:
-Book Appointment (for Patients)
-Cancel Appointment (for Admins)
-Search Appointment
-Exit
+- Book Appointment (for Patients)
+- Cancel Appointment (for Admins)
+- Search Appointment
+- Exit
 
 # System Flow
 
 ## Login Process:
-User enters their username and selects their role.
-System validates the role and grants the appropriate permissions.
+- User enters their username and selects their role.
+- System validates the role and grants the appropriate permissions.
 ## Appointment Process:
-Patients can book new appointments, while Admins can cancel appointments.
-Doctors can view their appointments and schedules.
+- Patients can book new appointments, while Admins can cancel appointments.
+- Doctors can view their appointments and schedules.
 ## Data Management:
 The system loads and saves appointments from/to the text file.
 
 # Error Handling
 
-**Invalid Inputs:** If a user enters an incorrect date or time format, the system will ask the user to enter the correct format again.
-**Doctor Availability:** If a doctor is not available at the chosen time, the system will notify the user.
-**Search Results:** If no appointments are found, the system will display a message saying no matching appointments were found.
+- **Invalid Inputs:** If a user enters an incorrect date or time format, the system will ask the user to enter the correct format again.
+- **Doctor Availability:** If a doctor is not available at the chosen time, the system will notify the user.
+- **Search Results:** If no appointments are found, the system will display a message saying no matching appointments were found.
 
 # Data Format
 
 Appointments are stored in the file appointments.txt in CSV format:
+
 PatientName,DoctorName,Date,Time,Reason
 
 # Future Enhancements
