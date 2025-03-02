@@ -7,4 +7,5 @@ The Context Diagram shows the overall system and its interactions with external 
 
 ## Container Diagram (Level 2)
 The Container Diagram outlines the software's high-level structure, showing the main containers (applications, databases, etc.) that make up the system.
-![C2](https://github.com/user-attachments/assets/020f8360-bd55-4065-8140-2a5893ffd685)
+
+![C2](https://github.com/user-attachments/assets/25629140-9228-4906-ae6f-93d3aeab9885)
