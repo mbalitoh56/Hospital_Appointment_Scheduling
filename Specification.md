@@ -70,3 +70,59 @@ The system loads appointments from this file when started and saves any changes 
 
 **Role-Based Access Control:** The system assigns each user a role (Admin, Doctor, Patient), and each role has different permissions.
 
+# User Roles and Permissions
+
+## Admin:
+Can view all appointments.
+Can cancel any appointment.
+Can search for appointments by patient or doctor name.
+
+## Doctor:
+Can view appointments with their name listed as the doctor.
+Can search for appointments by patient or doctor name.
+Cannot book or cancel appointments.
+
+## Patient:
+Can book new appointments with doctors.
+Can view only their own appointments.
+Can search for appointments by their own name or the doctor's name.
+
+# User Interface (UI)
+
+The User Interface (UI) is built using Java Swing and includes the following features:
+
+**Login Screen:** Users enter their username and choose their role.
+**Main Screen:** Displays a list of appointments and provides buttons for:
+Book Appointment (for Patients)
+Cancel Appointment (for Admins)
+Search Appointment
+Exit
+
+# System Flow
+
+## Login Process:
+User enters their username and selects their role.
+System validates the role and grants the appropriate permissions.
+## Appointment Process:
+Patients can book new appointments, while Admins can cancel appointments.
+Doctors can view their appointments and schedules.
+## Data Management:
+The system loads and saves appointments from/to the text file.
+
+# Error Handling
+
+**Invalid Inputs:** If a user enters an incorrect date or time format, the system will ask the user to enter the correct format again.
+**Doctor Availability:** If a doctor is not available at the chosen time, the system will notify the user.
+**Search Results:** If no appointments are found, the system will display a message saying no matching appointments were found.
+
+# Data Format
+
+Appointments are stored in the file appointments.txt in CSV format:
+PatientName,DoctorName,Date,Time,Reason
+
+# Future Enhancements
+
+- **Multiple Doctor Availability:** Allow doctors to have multiple available time slots for booking.
+- **Appointment Reminders:** Send reminders to patients and doctors about upcoming appointments.
+- **Mobile Version:** Develop a mobile app for better accessibility on the go.
+- **Advanced Search:** Include more search filters like appointment date or time.
