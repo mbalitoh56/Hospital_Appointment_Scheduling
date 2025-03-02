@@ -27,7 +27,7 @@ The Component Diagram breaks down the key components inside each container. Here
 
 ![C3](https://github.com/user-attachments/assets/52ffdb4b-d815-4f0f-977e-39cf22c403e6)
 
-## Dynamic Diagram (Level 4)
+## Code/Dynamic Diagram (Level 4)
 The Dynamic Diagram describes how the components interact during key operations such as booking an appointment.
 
 **Booking an Appointment:**
