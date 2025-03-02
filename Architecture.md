@@ -12,4 +12,5 @@ The Container Diagram outlines the software's high-level structure, showing the 
 
 ## Component Diagram (Level 3)
 The Component Diagram breaks down the key components inside each container. Here, we show how the Java Swing app connects to the Appointment Manager and how the system handles data.
+
 ![C3](https://github.com/user-attachments/assets/52ffdb4b-d815-4f0f-977e-39cf22c403e6)
