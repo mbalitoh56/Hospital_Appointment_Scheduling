@@ -5,5 +5,5 @@
 This is a **Hospital Appointment System** that I created using Java to manage appointments in a hospital. It allows users to log in as either an **Admin**, **Doctor**, or **Patient**, with each role having different privileges. Patients can book appointments with doctors, while admins can cancel appointments and view all appointments. The system also supports searching for appointments by patient or doctor name. Appointments are stored in a text file, ensuring data persistence between sessions. This application also provides a simple graphical user interface (GUI) for easy interaction.
 
 ### LINKS
-Specification.md
+[specification.md](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/11dbfdc2dec8cdf55949b9a2ef5d32e8a510d349/Specification.md)
 
