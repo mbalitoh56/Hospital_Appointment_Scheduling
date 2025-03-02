@@ -23,3 +23,5 @@ The Dynamic Diagram describes how the components interact during key operations 
 - Step 2: The Appointment Manager checks if the doctor is available.
 - Step 3: If available, the appointment is saved in the Appointment Data (text file).
 - Step 4: The Patient and Doctor receive a confirmation via Notification Alerts.
+
+![C4](https://github.com/user-attachments/assets/8198a67b-a5ca-4920-8124-0290bb9ad8ac)
