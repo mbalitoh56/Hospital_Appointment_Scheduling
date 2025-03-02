@@ -6,4 +6,5 @@ This is a **Hospital Appointment System** that I created using Java to manage ap
 
 ### LINKS
 [specification.md](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/11dbfdc2dec8cdf55949b9a2ef5d32e8a510d349/Specification.md)
+[Architecture.md](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/328a73f3c33ffb40df3c40c087c431a3faf5369f/Architecture.md)
 
