@@ -1,4 +1,16 @@
 # C4 Architecture Diagrams
+
+## Project Title:
+Hospital Appointment System
+
+## Domain:
+Healthcare
+
+The **Hospital Appointment System** is part of the **Healthcare** field, which focuses on providing medical services and managing things like patient visits, doctor appointments, and hospital operations. This system is designed to help patients book appointments with doctors, let admins manage and cancel appointments, and make sure doctors can see their own schedules. It makes the process of managing appointments smoother and more organized, which helps improve the patient experience and hospital efficiency.
+
+## Problem Statement:
+The goal of this **Hospital Appointment System** is to solve problems that hospitals face with scheduling and managing appointments. In many hospitals, it's easy to have double-booked appointments, missed appointments, or patients struggling to find available doctors. This system helps by allowing patients to book appointments directly with doctors, giving admins the ability to manage and cancel appointments, and allowing doctors to view their own appointments. The system also stores appointment data so that information is saved even after closing the program. By making appointments more organized, the system helps hospitals run more smoothly and makes it easier for patients to access care.
+
 ## Context Diagram (Level 1)
 The Context Diagram shows the overall system and its interactions with external entities.
 
