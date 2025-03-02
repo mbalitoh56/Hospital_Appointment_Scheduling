@@ -15,7 +15,9 @@ The goal of this **Hospital Appointment System** is to solve problems that hospi
 The Hospital Appointment System is a practical and useful solution to the problems that hospitals face with scheduling. The system will allow:
 
 **Patients** to book, view, and search for their appointments.
+
 **Doctors** to manage and see their own schedules.
+
 **Admins** to manage all appointments and cancel them if needed.
 
 This system is built using Java Swing, which makes it easy to use on desktop computers. It saves appointment data in text files, which is simple but works well for this type of system. The system also includes different user roles (Admin, Doctor, Patient) to make sure only the right people can access certain parts of the system.
