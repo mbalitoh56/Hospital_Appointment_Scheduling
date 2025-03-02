@@ -24,4 +24,49 @@ This system is built using Java Swing, which makes it easy to use on desktop com
 
 This system is easy to make and can be done with small teams or limited resources. The main features are simple and easy to maintain, making it a great fit for a small-scale healthcare setting.The Hospital Appointment System is feasible and valuable in addressing the inefficiencies commonly seen in hospitals regarding appointment scheduling.
 
+# Functional Requirements
+
+## Login
+**Users:** 
+Must enter a username and select their role (Admin, Doctor, or Patient).
+After logging in, the user is directed to the appropriate part of the system based on their role.
+If no valid input is given, the system exits.
+
+## Appointment Management
+**Book Appointment:**
+Patients can book appointments by entering their name, choosing a doctor, and providing the date, time, and reason for the appointment.
+The system checks if the doctor is available before confirming the appointment.
+
+**Cancel Appointment:**
+Admins can cancel any appointment in the system.
+Notifications are sent to both the patient and doctor if an appointment is canceled.
+
+**Search Appointment:**
+Users (Admin, Doctor, and Patient) can search for appointments by patient name or doctor name.
+Admins can view all appointments, but doctors and patients can only view their own.
+
+## Notifications
+After booking or canceling an appointment, notifications are sent to the patient and doctor using JOptionPane to alert them of the changes.
+
+## Data Persistence
+Appointment data is saved to a text file (appointments.txt).
+The system loads appointments from this file when started and saves any changes to the file when closed.
+
+# Non-Functional Requirements
+
+**Performance:** The system must be fast enough to handle a moderate number of appointments without lag.
+
+**Security:** Different users (Admins, Doctors, and Patients) should only be able to access the parts of the system meant for their role.
+
+**Usability:** The system should be easy to use, with a simple interface that is clear and straightforward for all users.
+
+**Reliability:** The system should work correctly, without crashes, and provide error messages when something goes wrong.
+
+# System Architecture
+
+**Client-Server Model:** The system runs on a client-side application (GUI) built with Java Swing.
+
+**Data Management:** The system uses a simple text file for storing appointment data, which makes it easy to load and save appointments.
+
+**Role-Based Access Control:** The system assigns each user a role (Admin, Doctor, Patient), and each role has different permissions.
 
