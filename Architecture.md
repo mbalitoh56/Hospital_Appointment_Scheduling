@@ -25,3 +25,11 @@ The Dynamic Diagram describes how the components interact during key operations 
 - Step 4: The Patient and Doctor receive a confirmation via Notification Alerts.
 
 ![C4](https://github.com/user-attachments/assets/8198a67b-a5ca-4920-8124-0290bb9ad8ac)
+
+## Feasibility Justification
+The Hospital Appointment System is feasible to implement in small to medium-sized healthcare facilities. It uses simple technology (Java Swing for the UI and text files for storage), which makes it accessible even with minimal technical infrastructure.
+
+- **Cost:** Development costs are low because it uses basic Java technology and does not require expensive servers or databases.
+- **Time:** The system can be developed quickly as it is relatively simple and focuses on core features that solve specific problems.
+- **Scalability:** While the system can handle a moderate number of users and appointments, future upgrades like a cloud-based database or mobile version can easily scale the system for larger healthcare facilities.
+- **User Adoption:** The system is designed to be intuitive and easy to use, reducing training time for hospital staff.
