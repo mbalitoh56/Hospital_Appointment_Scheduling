@@ -121,8 +121,7 @@ The system loads and saves appointments from/to the text file.
 # Data Format
 
 Appointments are stored in the file appointments.txt in CSV format:
-
-PatientName,DoctorName,Date,Time,Reason
+- PatientName,DoctorName,Date,Time,Reason
 
 # Future Enhancements
 
