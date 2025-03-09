@@ -18,11 +18,17 @@ The Hospital Appointment System allows patients, doctors, administrators, recept
 
 ### User Management
 **Login:** Users must log in with a valid username and select a role from the following options:
+
 **ADMIN:** Full access to manage appointments.
+
 **DOCTOR:** Limited access to view appointments and manage availability.
+
 **PATIENT:** Access to book and view their own appointments.
+
 **RECEPTIONIST:** Assist patients with appointment booking, rescheduling, and cancellations.
+
 **IT SUPPORT STAFF:** Maintain the system and ensure it runs smoothly.
+
 **HEALTH INSURANCE PROVIDERS:** Verify patient eligibility and insurance coverage.
 
 ### Appointment Management
