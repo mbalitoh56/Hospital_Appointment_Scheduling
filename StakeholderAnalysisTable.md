@@ -1,4 +1,5 @@
-STAKEHOLDER ANALYSIS TABLE
+# STAKEHOLDER ANALYSIS TABLE
+
 This is a table that identifies key stakeholders, their roles, concerns, pain points, and success metrics.
 \
 Stakeholder	Role	Key Concerns	Pain Points	Success Metrics
@@ -8,4 +9,5 @@ Administrators	Manage all system operations	Efficient appointment handling	Manua
 Receptionists	Assist in booking and managing records	Quick access to patient info	Paper-based scheduling issues	50% faster appointment processing
 IT Support	Maintain and update the system	System stability and security	System downtime, slow updates	99% system uptime
 Hospital Management	Oversee hospital operations	Efficient patient flow	Poor resource allocation	20% increase in appointment efficiency
+
 
