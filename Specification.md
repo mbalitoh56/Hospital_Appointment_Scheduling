@@ -68,16 +68,23 @@ The UI is responsive and updates to reflect the current state of appointments.
 ### Classes
 
 **Appointment:** Represents an appointment with details such as patient name, doctor name, date, time, and reason for the appointment.
+
 **User:** Represents a user with a username and role (Admin, Doctor, Patient, Receptionist, IT Support Staff, Health Insurance Provider).
+
 **HospitalAppointmentSystem:** Main class that runs the system, handles user login, appointment management, UI creation, and file I/O operations.
 
 #### User Roles
 
 **Admin:** Can book, cancel, and search any appointment.
+
 **Doctor:** Can only view and search appointments for themselves.
+
 **Patient:** Can only book and view their own appointments.
+
 **Receptionist:** Can assist with booking and canceling appointments.
+
 **IT Support Staff:** Ensures the system functions without downtime and handles technical issues.
+
 **Health Insurance Providers:** Can verify the eligibility and coverage of patients for their visits.
 
 ## Non-Functional Requirements
