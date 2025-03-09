@@ -1,12 +1,15 @@
-# STAKEHOLDER ANALYSIS
+# SYSTEM REQUIREMENTS DOCUMENT (SRD)
+
+## STAKEHOLDER ANALYSIS
 
 ### 1. Patients
 
-** Role: **  Users who book appointments with doctors.
-Key Concerns: 
-•	Easy appointment booking and cancellation.
-•	Access to doctors' availability.
-•	Timely notifications about upcoming appointments.
+**Role:**  Users who book appointments with doctors.
+
+**Key Concerns:** 
+- Easy appointment booking and cancellation.
+- Access to doctors' availability.
+- Timely notifications about upcoming appointments.
 Pain Points: 
 •	Difficulty in finding available doctors.
 •	No reminder system for scheduled appointments.
