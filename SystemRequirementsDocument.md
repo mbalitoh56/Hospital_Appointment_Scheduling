@@ -10,33 +10,44 @@
 - Easy appointment booking and cancellation.
 - Access to doctors' availability.
 - Timely notifications about upcoming appointments.
-Pain Points: 
-•	Difficulty in finding available doctors.
-•	No reminder system for scheduled appointments.
-•	Long waiting times at the hospital due to overbooking.
-Success Metrics: 
-•	30% reduction in missed appointments.
-•	Faster booking process (< 3 minutes per appointment).
-2. Doctors
-Role: Provide medical consultation based on scheduled appointments.
-Key Concerns: 
-•	Efficient scheduling to avoid double bookings.
-•	Access to patient details before appointments.
-•	Ability to manage availability and appointment times.
-Pain Points: 
-•	No centralized system to track daily appointments.
-•	Patients missing appointments without prior cancellation.
-•	Overbooked time slots causing delays.
-Success Metrics: 
-•	40% fewer scheduling conflicts.
-•	25% improvement in doctor-patient consultation time.
-3. Hospital Administrators
-•	Role: Manage hospital operations, ensure smooth scheduling.
-•	Key Concerns: 
-o	Effective monitoring of doctor schedules.
-o	Proper record-keeping of all patient appointments.
-o	Ensuring the system reduces manual work.
-•	Pain Points: 
+  
+**Pain Points:** 
+- Difficulty in finding available doctors.
+- No reminder system for scheduled appointments.
+- Long waiting times at the hospital due to overbooking.
+
+**Success Metrics:** 
+- 30% reduction in missed appointments.
+- Faster booking process (< 3 minutes per appointment).
+  
+### 2. Doctors
+
+**Role:** Provide medical consultation based on scheduled appointments.
+
+**Key Concerns:** 
+- Efficient scheduling to avoid double bookings.
+- Access to patient details before appointments.
+- Ability to manage availability and appointment times.
+
+**Pain Points:** 
+- No centralized system to track daily appointments.
+- Patients missing appointments without prior cancellation.
+- Overbooked time slots causing delays.
+
+**Success Metrics:** 
+- 40% fewer scheduling conflicts.
+- 25% improvement in doctor-patient consultation time.
+
+### 3. Hospital Administrators
+
+**Role:** Manage hospital operations, ensure smooth scheduling.
+
+**Key Concerns:** 
+- Effective monitoring of doctor schedules.
+- Proper record-keeping of all patient appointments.
+- Ensuring the system reduces manual work.
+
+**Pain Points:** 
 o	Heavy reliance on paperwork for tracking appointments.
 o	Difficulty in managing last-minute appointment changes.
 o	No real-time insights into doctor availability.
