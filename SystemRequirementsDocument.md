@@ -196,27 +196,34 @@
 
 
 ## NON-FUNCTIONAL REQUIREMENTS
-1. Usability
-•	Requirement: The system shall provide a simple and intuitive graphical user interface (GUI) for easy navigation.
-•	Requirement: The system shall ensure text readability and button accessibility for all users, including those with visual impairments.
-•	Requirement: Error messages shall be clear and provide guidance on how to correct input mistakes.
-2. Deployability
+
+### 1. Usability
+
+- **Requirement:** The system shall provide a simple and intuitive graphical user interface (GUI) for easy navigation.
+- **Requirement:** The system shall ensure text readability and button accessibility for all users, including those with visual impairments.
+- **Requirement:** Error messages shall be clear and provide guidance on how to correct input mistakes.
+
+### 2. Deployability
 •	Requirement: The system shall be deployable on Windows and Linux operating systems.
 •	Requirement: The system shall require Java 11 or later for execution.
 •	Requirement: The system shall run as a standalone desktop application with no external database dependencies.
-3. Maintainability
+
+### 3. Maintainability
 •	Requirement: The system shall include a developer guide with instructions for future enhancements and debugging.
 •	Requirement: The source code shall follow clean coding practices with proper comments and documentation.
 •	Requirement: The system shall support modular architecture, making it easy to add new features such as automated reminders or patient medical history tracking.
-4. Scalability
+
+### 4. Scalability
 •	Requirement: The system shall support at least 100 concurrent users without performance degradation.
 •	Requirement: The system shall handle up to 10,000 appointment records efficiently.
 •	Requirement: Future enhancements should allow integration with cloud-based storage solutions for scalability.
-5. Security
+
+### 5. Security
 •	Requirement: All stored appointment data shall be encrypted using AES-256 encryption.
 •	Requirement: User authentication must include role-based access control (RBAC) to prevent unauthorized access.
 •	Requirement: The system shall implement input validation to prevent SQL injection and other security threats.
-6. Performance
+
+### 6. Performance
 •	Requirement: Appointment searches shall return results within 2 seconds.
 •	Requirement: The system shall load and display the main dashboard within 5 seconds after login.
 •	Requirement: The system shall automatically save appointment data within 1 second before closing.
