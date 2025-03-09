@@ -11,121 +11,159 @@ The **Hospital Appointment System** is part of the **Healthcare** field, which f
 ## Problem Statement:
 The goal of this **Hospital Appointment System** is to solve problems that hospitals face with scheduling and managing appointments. In many hospitals, it's easy to have double-booked appointments, missed appointments, or patients struggling to find available doctors. This system helps by allowing patients to book appointments directly with doctors, giving admins the ability to manage and cancel appointments, and allowing doctors to view their own appointments. The system also stores appointment data so that information is saved even after closing the program. By making appointments more organized, the system helps hospitals run more smoothly and makes it easier for patients to access care.
 
-## Individual Scope:
-The Hospital Appointment System is a practical and useful solution to the problems that hospitals face with scheduling. The system will allow:
+## System Overview
+The Hospital Appointment System allows patients, doctors, administrators, receptionists, IT support staff, and health insurance providers to manage appointments efficiently. It includes features for booking, canceling, and searching appointments while ensuring that doctors are not double-booked. The system also sends notifications and integrates with health insurance verification to ensure smooth operations.
 
-**Patients** to book, view, and search for their appointments.
+## Functional Requirements
 
-**Doctors** to manage and see their own schedules.
+### User Management
+Login: Users must log in with a valid username and select a role from the following options:
+ADMIN: Full access to manage appointments.
+DOCTOR: Limited access to view appointments and manage availability.
+PATIENT: Access to book and view their own appointments.
+RECEPTIONIST: Assist patients with appointment booking, rescheduling, and cancellations.
+IT SUPPORT STAFF: Maintain the system and ensure it runs smoothly.
+HEALTH INSURANCE PROVIDERS: Verify patient eligibility and insurance coverage.
+2.2 Appointment Management
+Book Appointment: A patient can book an appointment by providing:
+Patient name (auto-filled for the logged-in patient).
+Doctor’s name.
+Date and time of the appointment.
+Reason for the appointment.
+The system checks if the doctor is available.
+Cancel Appointment: Only admins and receptionists can cancel appointments.
+Users can cancel appointments if they are selected from the list.
+Search Appointment: Users can search for appointments by either patient or doctor name. The search results will be filtered based on the user's role (patients can only see their appointments, and doctors can only see their appointments).
+2.3 Appointment Storage
+Appointments are stored in a text file (appointments.txt) in the following format:
+patientName, doctorName, date, time, reason
+2.4 Notifications
+After each booking or cancellation, a notification is sent to the respective patient, indicating the appointment status (booked or canceled).
+2.5 UI and Interaction
+The user interface includes:
+A list displaying the appointments for the logged-in user.
+Buttons to book, cancel, search appointments, and exit the system.
+The UI is responsive and updates to reflect the current state of appointments.
+3. System Architecture
+3.1 Classes
+Appointment: Represents an appointment with details such as patient name, doctor name, date, time, and reason for the appointment.
+User: Represents a user with a username and role (Admin, Doctor, Patient, Receptionist, IT Support Staff, Health Insurance Provider).
+HospitalAppointmentSystem: Main class that runs the system, handles user login, appointment management, UI creation, and file I/O operations.
+3.2 User Roles
+Admin: Can book, cancel, and search any appointment.
+Doctor: Can only view and search appointments for themselves.
+Patient: Can only book and view their own appointments.
+Receptionist: Can assist with booking and canceling appointments.
+IT Support Staff: Ensures the system functions without downtime and handles technical issues.
+Health Insurance Providers: Can verify the eligibility and coverage of patients for their visits.
+4. Non-Functional Requirements
+4.1 Performance
+The system should load appointments efficiently, even with a large number of records.
+The appointment booking process should complete in under 3 seconds.
+4.2 Usability
+The system should have an intuitive user interface with minimal steps for booking, searching, and canceling appointments.
+4.3 Reliability
+The system should maintain appointments reliably across sessions using file storage.
+Appointment data should persist even if the application is closed and reopened.
+4.4 Security
+The system should ensure only authorized users (Admin, Doctor, Patient, Receptionist, IT Support Staff, Health Insurance Provider) can perform their respective actions.
+User credentials (username) are not stored; only the role selection is used for access control.
+5. System Constraints
+5.1 Storage
+The system relies on a text file (appointments.txt) for storing appointments. This file should not exceed a size of 100MB.
+5.2 Dependencies
+The system is built using Java Swing for the user interface, Java IO for file operations, and standard Java libraries for other functionalities.
+6. Data Flow
+Login: The user provides a username and selects a role.
+Appointment Management:
+Book Appointment: Checks doctor availability, adds the appointment, and sends notifications.
+Cancel Appointment: Removes the selected appointment and sends notifications.
+Search Appointment: Filters and displays appointments based on search criteria (patient or doctor name).
+Exit: Saves the appointments to the file before exiting the system.
+7. Stakeholder Analysis
+7.1 Patients
+Role: Users who book appointments with doctors.
+Key Concerns:
+Easy appointment booking and cancellation.
+Access to doctors' availability.
+Timely notifications about upcoming appointments.
+Pain Points:
+Difficulty in finding available doctors.
+No reminder system for scheduled appointments.
+Long waiting times at the hospital due to overbooking.
+Success Metrics:
+30% reduction in missed appointments.
+Faster booking process (< 3 minutes per appointment).
+7.2 Doctors
+Role: Provide medical consultation based on scheduled appointments.
+Key Concerns:
+Efficient scheduling to avoid double bookings.
+Access to patient details before appointments.
+Ability to manage availability and appointment times.
+Pain Points:
+No centralized system to track daily appointments.
+Patients missing appointments without prior cancellation.
+Overbooked time slots causing delays.
+Success Metrics:
+40% fewer scheduling conflicts.
+25% improvement in doctor-patient consultation time.
+7.3 Hospital Administrators
+Role: Manage hospital operations and ensure smooth scheduling.
+Key Concerns:
+Effective monitoring of doctor schedules.
+Proper record-keeping of all patient appointments.
+Ensuring the system reduces manual work.
+Pain Points:
+Heavy reliance on paperwork for tracking appointments.
+Difficulty in managing last-minute appointment changes.
+No real-time insights into doctor availability.
+Success Metrics:
+50% reduction in administrative workload.
+Real-time tracking of appointments for better hospital efficiency.
+7.4 Receptionists
+Role: Assist patients with booking, rescheduling, and canceling appointments.
+Key Concerns:
+Fast and efficient appointment handling.
+Easy access to doctor schedules.
+Reducing errors in appointment scheduling.
+Pain Points:
+Manual tracking of doctor availability.
+High workload during peak hours.
+No automated confirmation messages for patients.
+Success Metrics:
+30% decrease in appointment booking errors.
+Faster processing of appointment requests.
+7.5 IT Support Staff
+Role: Maintain and troubleshoot the appointment scheduling system.
+Key Concerns:
+Ensuring the system runs without downtime.
+Secure handling of patient data.
+Regular updates and maintenance.
+Pain Points:
+Frequent system crashes due to increased user load.
+Lack of an automated backup system.
+Security vulnerabilities in patient data storage.
+Success Metrics:
+99% system uptime.
+Zero data breaches within a year.
+7.6 Health Insurance Providers
+Role: Verify patient eligibility and coverage for hospital visits.
+Key Concerns:
+Integration with hospital billing systems.
+Quick verification of patient insurance details.
+Reducing fraudulent claims.
+Pain Points:
+Delayed insurance verification processes.
+Patients unsure of their coverage before appointments.
+Poor communication between hospitals and insurance companies.
+Success Metrics:
+50% faster insurance verification process.
+Reduced number of rejected claims due to miscommunication.
+8. File Format
+Appointments are stored in a comma-separated format:
 
-**Admins** to manage all appointments and cancel them if needed.
-
-This system is built using Java Swing, which makes it easy to use on desktop computers. It saves appointment data in text files, which is simple but works well for this type of system. The system also includes different user roles (Admin, Doctor, Patient) to make sure only the right people can access certain parts of the system.
-
-This system is easy to make and can be done with small teams or limited resources. The main features are simple and easy to maintain, making it a great fit for a small-scale healthcare setting.The Hospital Appointment System is feasible and valuable in addressing the inefficiencies commonly seen in hospitals regarding appointment scheduling.
-
-# Functional Requirements
-
-## Login
-**Users:** 
-- Must enter a username and select their role (Admin, Doctor, or Patient).
-- After logging in, the user is directed to the appropriate part of the system based on their role.
-- If no valid input is given, the system exits.
-
-## Appointment Management
-**Book Appointment:**
-- Patients can book appointments by entering their name, choosing a doctor, and providing the date, time, and reason for the appointment.
-- The system checks if the doctor is available before confirming the appointment.
-
-**Cancel Appointment:**
-Admins can cancel any appointment in the system.
- 
-Notifications are sent to both the patient and doctor if an appointment is canceled.
-
-**Search Appointment:**
-Users (Admin, Doctor, and Patient) can search for appointments by patient name or doctor name.
-
-Admins can view all appointments, but doctors and patients can only view their own.
-
-## Notifications
-After booking or canceling an appointment, notifications are sent to the patient and doctor using JOptionPane to alert them of the changes.
-
-## Data Persistence
-Appointment data is saved to a text file (appointments.txt).
- 
-The system loads appointments from this file when started and saves any changes to the file when closed.
-
-# Non-Functional Requirements
-
-**Performance:** The system must be fast enough to handle a moderate number of appointments without lag.
-
-**Security:** Different users (Admins, Doctors, and Patients) should only be able to access the parts of the system meant for their role.
-
-**Usability:** The system should be easy to use, with a simple interface that is clear and straightforward for all users.
-
-**Reliability:** The system should work correctly, without crashes, and provide error messages when something goes wrong.
-
-# System Architecture
-
-**Client-Server Model:** The system runs on a client-side application (GUI) built with Java Swing.
-
-**Data Management:** The system uses a simple text file for storing appointment data, which makes it easy to load and save appointments.
-
-**Role-Based Access Control:** The system assigns each user a role (Admin, Doctor, Patient), and each role has different permissions.
-
-# User Roles and Permissions
-
-## Admin:
-- Can view all appointments.
-- Can cancel any appointment.
-- Can search for appointments by patient or doctor name.
-
-## Doctor:
-- Can view appointments with their name listed as the doctor.
-- Can search for appointments by patient or doctor name.
-- Cannot book or cancel appointments.
-
-## Patient:
-- Can book new appointments with doctors.
-- Can view only their own appointments.
-- Can search for appointments by their own name or the doctor's name.
-
-# User Interface (UI)
-
-The User Interface (UI) is built using Java Swing and includes the following features:
-
-**Login Screen:** Users enter their username and choose their role.
-**Main Screen:** Displays a list of appointments and provides buttons for:
-- Book Appointment (for Patients)
-- Cancel Appointment (for Admins)
-- Search Appointment
-- Exit
-
-# System Flow
-
-## Login Process:
-- User enters their username and selects their role.
-- System validates the role and grants the appropriate permissions.
-## Appointment Process:
-- Patients can book new appointments, while Admins can cancel appointments.
-- Doctors can view their appointments and schedules.
-## Data Management:
-The system loads and saves appointments from/to the text file.
-
-# Error Handling
-
-- **Invalid Inputs:** If a user enters an incorrect date or time format, the system will ask the user to enter the correct format again.
-- **Doctor Availability:** If a doctor is not available at the chosen time, the system will notify the user.
-- **Search Results:** If no appointments are found, the system will display a message saying no matching appointments were found.
-
-# Data Format
-
-Appointments are stored in the file appointments.txt in CSV format:
-- PatientName,DoctorName,Date,Time,Reason
-
-# Future Enhancements
-
-- **Multiple Doctor Availability:** Allow doctors to have multiple available time slots for booking.
-- **Appointment Reminders:** Send reminders to patients and doctors about upcoming appointments.
-- **Mobile Version:** Develop a mobile app for better accessibility on the go.
-- **Advanced Search:** Include more search filters like appointment date or time.
+lua
+Copy
+Edit
+patientName,doctorName,date,time,reason
+These additions provide a clearer understanding of the stakeholders involved in the Hospital Appointment System, their concerns, pain points, and the metrics for success.
