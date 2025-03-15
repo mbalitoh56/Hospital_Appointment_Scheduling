@@ -1,6 +1,6 @@
 ```mermaid
 %% Hospital Appointment System Use Case Diagram
-graph TD;
+graph TB;
   %% Actors
   Admin["🧑‍💼 Admin"];
   Doctor["👨‍⚕️ Doctor"];
