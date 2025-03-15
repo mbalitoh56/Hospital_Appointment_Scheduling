@@ -17,14 +17,8 @@
 ## **Non-Functional Test Cases**
 | Test Case ID | Requirement ID | Test Scenario | Steps | Expected Result | Actual Result | Status (Pass/Fail) |
 |-------------|---------------|--------------|-------|-----------------|---------------|----------------|
-| TC-NF-001 | NFR-006 | **Performance Test**: System should handle 1000 concurrent users | Simulate 1000 concurrent users booking/searching appointments | Response time ≤ 2 seconds | | |
-| TC-NF-002 | NFR-005 | **Security Test**: Prevent unauthorized access | Attempt login with invalid credentials multiple times | System locks account after 5 failed attempts | | |
+| TC-NF-001 | NFR-006 | **Performance Test**: System should handle 1000 concurrent users | Simulate 1000 concurrent users booking/searching appointments | Response time ≤ 2 seconds | Response time was under 2 seconds for all users. | Pass |
+| TC-NF-002 | NFR-005 | **Security Test**: Prevent unauthorized access | Attempt login with invalid credentials multiple times | System locks account after 5 failed attempts | System locked account after 5 failed login attempts. | Pass |
 
 ---
-
-📌 **How to Use:**  
-- Upload this `.md` file to GitHub for proper display.  
-- Use these test cases to validate system functionality.  
-
-Would you like any modifications or additional test cases? 😊  
 
