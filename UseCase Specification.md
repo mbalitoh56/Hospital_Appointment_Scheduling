@@ -166,9 +166,3 @@
 
 ---
 
-**📌 How to Use:**  
-- Upload this `.md` file to GitHub for proper display.  
-- Use it as a reference for implementing functional requirements.  
-
-Would you like any refinements or additional use cases? 😊  
-
