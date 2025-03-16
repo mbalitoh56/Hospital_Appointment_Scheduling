@@ -12,7 +12,7 @@ graph TD;
     IT_Support["👤 IT Support Staff"]
     Insurance_Provider["👤 Health Insurance Provider"]
 
-   subgragh %% Use Cases %%
+     %% Use Cases %%
     Appointment_Booking["📅 Book Appointment"]
     Appointment_Cancellation["❌ Cancel Appointment"]
     Search_Appointment["🔍 Search Appointment"]
@@ -22,7 +22,7 @@ graph TD;
     User_Authentication["🔑 User Authentication"]
     Insurance_Verification["💳 Verify Insurance"]
     System_Maintenance["🛠 Maintain System"]
-end
+
     %% Relationships %%
     Patient -->|Books| Appointment_Booking
     Patient -->|Cancels| Appointment_Cancellation
