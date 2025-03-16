@@ -190,5 +190,30 @@
 
 ---
 
+# Reflection
+
+### 1. **Unclear Requirements**
+One of my biggest challenges is when the requirements are not clear enough. Sometimes, the instructions about what the system should do are vague, which can make it hard to understand how the system should behave. For example, if the requirement says "Users should be able to book appointments easily," it doesn’t explain what "easily" really means. It’s important to clarify things like how users should choose doctors, what happens if a time slot is already taken, and what should happen if an error happens. Without this clarity, translating the requirement into a detailed use case or test case can be difficult and may need to be changed multiple times.
+
+### 2. **Different Needs of Different Users**
+A hospital appointment system is meant for many different types of users, like patients, doctors, receptionists, admins, and IT support staff. Each type of user has different needs. For example, doctors want to set their available times for appointments, while patients need to book those appointments. When writing use cases, you need to make sure each type of user can do what they need to do without causing problems for other users. Balancing all these different needs can be challenging, especially when making sure everyone can easily use the system.
+
+### 3. **Edge Cases and Alternative Scenarios**
+Sometimes, unusual or unexpected situations are missed when writing use cases. For example, what should happen if a patient tries to cancel an appointment at the last minute? Or what if a doctor changes their availability while a patient is trying to book an appointment? Thinking about all the possible situations is difficult but important. Use cases need to cover these unusual situations, which are sometimes left out in the early stages of planning.
+
+### 4. **Working with Other Systems**
+The hospital system may need to work with other external systems, like insurance providers. For example, checking a patient’s insurance coverage means sending information to another system. If that system doesn’t respond or takes too long, the hospital system needs to handle the situation properly. Writing use cases for these situations is difficult because it’s hard to predict how the system will react when something goes wrong with another system. You need to plan for how the system will handle errors or delays.
+
+### 5. **User Login and Security**
+Since the system deals with sensitive patient information, it’s very important to make sure only the right people can access the system. Different users (patients, doctors, admins) should only be able to access the parts of the system that are relevant to them. Writing tests to make sure this happens can be tricky because you have to check that unauthorized users can’t get in, and that the system knows what to do if someone keeps entering the wrong password.
+
+### 6. **Performance and Stress Testing**
+The system needs to be able to handle many people using it at the same time, especially during busy times. For example, many people might try to book or search for appointments at once, and the system needs to stay fast and work well. Testing this is difficult because you need to test how the system works under heavy use, and it’s hard to know how it will behave when many users are logged in at once.
+
+### 7. **Legal and Privacy Rules**
+In healthcare, there are strict laws to protect patient information. Making sure the system follows these rules can make writing use cases and tests more complicated. Features like keeping data secure, encryption, and tracking who has accessed the system need to be carefully planned and tested to make sure the system follows the law.
+
+In conclusion, turning requirements into use cases and tests for a hospital appointment system is hard because of unclear instructions, different user needs, and the need to handle unexpected situations. It also requires making sure the system works well with other systems, keeps patient data safe, and can handle lots of users at once. Careful planning and testing are necessary to overcome these challenges.
+
 
 
