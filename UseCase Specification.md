@@ -164,7 +164,9 @@
 ### **Alternative Flows**
 - **System failure** → IT staff escalates issue for further resolution.
 
----# Hospital Appointment System - Test Case Development
+---
+
+# Test Case Development
 
 ## **Functional Test Cases**
 | Test Case ID | Requirement ID | Description | Steps | Expected Result | Actual Result | Status (Pass/Fail) |
