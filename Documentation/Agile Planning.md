@@ -64,9 +64,9 @@
 
 | **Task ID** | **Task Description**                                    | **Assigned To**  | **Estimated Hours** | **Status**        |
 |-------------|----------------------------------------------------------|------------------|---------------------|-------------------|
-| **T-001**   | Develop user registration endpoint                       | Dev Team         | 8                   | To Do            |
-| **T-002**   | Design and implement patient registration UI             | UI/UX Team       | 10                  | To Do            |
-| **T-003**   | Implement login system for patients                       | Dev Team         | 6                   | To Do            |
+| **T-001**   | Develop user registration endpoint                       | Dev Team         | 8                   | Done            |
+| **T-002**   | Design and implement patient registration UI             | UI/UX Team       | 10                  | Done            |
+| **T-003**   | Implement login system for patients                       | Dev Team         | 6                   | In Progress            |
 | **T-004**   | Develop appointment booking functionality                | Dev Team         | 12                  | To Do            |
 | **T-005**   | Create doctor availability management feature            | Dev Team         | 10                  | To Do            |
 | **T-006**   | Integrate appointment booking with doctor's schedule     | Dev Team         | 8                   | To Do            |
