@@ -1,3 +1,5 @@
+# Comparison Table
+
 | Template            | Columns & Workflows                     | Automation Features                              | Agile Suitability                     |
 |---------------------|--------------------------------------|----------------------------------------------|----------------------------------------|
 | **Basic Kanban**    | "To Do," "In Progress," "Done"       | Manual issue movement                        | Suitable for simple Agile workflows, but lacks automation for sprints. |
@@ -6,10 +8,11 @@
 
 
 # Justification for Selection
-For the Hospital Appointment Scheduling System, the best choice is Automated Kanban because:
 
-It supports sprint tracking with built-in automation.
+For the Hospital Appointment Scheduling System, the best choice is **Automated Kanban because** because:
 
-Issues move automatically based on PRs and commits, reducing manual effort.
+- It supports sprint tracking with built-in automation.
 
-It aligns well with Agile principles by enabling continuous tracking and iteration.
+- Issues move automatically based on PRs and commits, reducing manual effort.
+
+- It aligns well with Agile principles by enabling continuous tracking and iteration.
