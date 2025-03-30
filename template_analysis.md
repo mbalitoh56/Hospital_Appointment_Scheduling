@@ -9,7 +9,7 @@
 
 # Justification for Selection
 
-For the Hospital Appointment Scheduling System, the best choice is **Automated Kanban because** because:
+For the Hospital Appointment Scheduling System, the best choice is **Automated Kanban** because:
 
 - It supports sprint tracking with built-in automation.
 
