@@ -145,24 +145,18 @@ Patients: Quick and error-free appointment booking (< 3 minutes per appointment)
 Doctors & Administrators: Prevents double bookings and scheduling conflicts.
 
 3. Appointment Cancellation Workflow
-
 ```mermaid
 flowchart TD
-    %% Swimlanes: Patient and System
-    subgraph Patient
-        A[Start: Request Cancellation]
-    end
-    subgraph System
-        B[Receive Cancellation Request]
-        C[Confirm Cancellation Intent]
-        D[Update Appointment Status to "Canceled"]
-        E[Send Cancellation Notifications to Doctor & Patient]
-    end
-    A --> B
-    B --> C
-    C -- Yes --> D
+    %% Labels to simulate swimlanes
+    PAT["Patient"]
+    SYS["System"]
+
+    PAT --> A[Request Cancellation]
+    A --> B[Receive Cancellation Request]
+    B --> C[Confirm Cancellation Intent]
+    C -- Yes --> D[Update Appointment Status to 'Canceled']
     C -- No --> F[Abort Cancellation]
-    D --> E
+    D --> E[Send Cancellation Notifications]
     E --> G[End]
 ```
 Explanation:
