@@ -46,6 +46,23 @@ stateDiagram-v2
 
 # complex workflows
 
+✅ Suggested Workflows from Your Hospital Appointment System:
+User Registration
+
+Patient Books Appointment
+
+Doctor Updates Availability
+
+Admin Cancels Appointment
+
+Appointment Reminder Notification
+
+Patient Views Appointment History
+
+Insurance Eligibility Verification
+
+System Exit with Auto-Save
+
 1. User Authentication & Role Management Workflow
 ```mermaid
 flowchart TD
@@ -353,75 +370,7 @@ IT Support: Minimizes risk of data corruption and maintains system integrity.
 Each diagram maps directly to specific functional requirements and stakeholder pain points mentioned in your System Requirements Document. These workflows help ensure that the system is both user-friendly and robust in handling various scenarios from authentication to data persistence.
 
 
-✅ Suggested Workflows from Your Hospital Appointment System:
-User Registration
 
-Patient Books Appointment
-
-Doctor Updates Availability
-
-Admin Cancels Appointment
-
-Appointment Reminder Notification
-
-Patient Views Appointment History
-
-Insurance Eligibility Verification
-
-System Exit with Auto-Save
-
-Let’s start with the first one as a complete example:
-
-1. User Registration
-🧩 Mermaid Activity Diagram with Swimlanes:
-mermaid
-```mermaid
----
-title: User Registration Workflow
----
-%% Roles: User | System
-flowchart TD
-    subgraph User
-        A1[Start Registration] --> A2[Enter Details]
-        A2 --> A3[Submit Form]
-    end
-
-    subgraph System
-        B1[Validate Input] --> B2{Is Input Valid?}
-        B2 -- Yes --> B3[Create Account]
-        B2 -- No --> B4[Show Error Message]
-        B4 --> A2
-        B3 --> B5[Send Confirmation Email]
-        B5 --> B6[Redirect to Login]
-        B6 --> A4[End]
-    end
-```
-📝 Explanation:
-Actors (Swimlanes):
-
-User: Enters and submits registration info.
-
-System: Validates data, creates account, and sends confirmation.
-
-Key Actions:
-
-Validate Input, Create Account, Send Confirmation Email.
-
-Decision:
-
-Is Input Valid? – if not, return to form with an error.
-
-End Node:
-
-Ends after successful redirect to login page.
-
-Stakeholder Concern Addressed:
-
-Patients and doctors need a smooth sign-up process (from Stakeholder Analysis).
-
-Ensures clean data entry (IT Support concern: system integrity).
-
-Would you like me to continue and build the other 7 diagrams now? Or do you want to adjust or review one at a time?
 
 
 Great — this is the **Integration with Prior Work** section. It’s worth **10 Marks** and focuses on **traceability** — showing how your models connect to previously defined elements like:
