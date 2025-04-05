@@ -1,6 +1,3 @@
-Great! Let's break this down. You need **7–8 critical objects** from your **Hospital Appointment Scheduling System**, and for each, a **UML-compliant state transition diagram** using **Mermaid syntax**, along with a markdown explanation.
-
----
 
 ### ✅ Suggested Objects:
 1. Appointment  
@@ -14,12 +11,8 @@ Great! Let's break this down. You need **7–8 critical objects** from your **Ho
 
 ---
 
-I’ll begin by creating diagrams and explanations for each. Here’s the first one:
-
----
-
 ## 1. **Appointment**  
-### 📈 Mermaid State Diagram:
+
 
 ```mermaid
 stateDiagram-v2
@@ -50,11 +43,8 @@ stateDiagram-v2
 
 ---
 
-Would you like me to go ahead and generate the next 7 diagrams with explanations?
 
-
-
-Below are 8 complex workflow diagrams (using Mermaid syntax) that illustrate key processes in the Hospital Appointment Scheduling System. Each diagram includes start/end nodes, actions, decisions, parallel (or concurrent) steps where applicable, and swimlanes to show the roles or actors responsible. Under each diagram, you’ll find a markdown explanation that describes the workflow, highlights its key steps, and explains how it addresses specific stakeholder concerns.
+# complex workflows
 
 1. User Authentication & Role Management Workflow
 ```mermaid
@@ -147,16 +137,21 @@ Doctors & Administrators: Prevents double bookings and scheduling conflicts.
 3. Appointment Cancellation Workflow
 ```mermaid
 flowchart TD
-    %% Labels to simulate swimlanes
-    PAT["Patient"]
-    SYS["System"]
-
-    PAT --> A[Request Cancellation]
-    A --> B[Receive Cancellation Request]
-    B --> C[Confirm Cancellation Intent]
-    C -- Yes --> D[Update Appointment Status to 'Canceled']
+    %% Swimlanes: Patient and System
+    subgraph Patient
+        A[Start: Request Cancellation]
+    end
+    subgraph System
+        B[Receive Cancellation Request]
+        C[Confirm Cancellation Intent]
+        D[Update Appointment Status to 'Canceled']
+        E[Send Cancellation Notifications to Doctor & Patient]
+    end
+    A --> B
+    B --> C
+    C -- Yes --> D
     C -- No --> F[Abort Cancellation]
-    D --> E[Send Cancellation Notifications]
+    D --> E
     E --> G[End]
 ```
 Explanation:
@@ -186,7 +181,7 @@ flowchart TD
     end
     subgraph System
         D[Receive Doctor’s Decision]
-        E[Update Appointment Status (Confirmed/Rejected)]
+        E[Update Appointment Status 'Confirm/Reject']
         F[Notify Patient of Decision]
     end
     A --> B
@@ -219,13 +214,13 @@ flowchart TD
     %% Swimlanes: User and System
     subgraph User
         A[Start: Initiate Appointment Search]
-        B[Enter Search Criteria (Patient Name, Doctor Name, or Date)]
+        B[Enter Search Criteria]
     end
     subgraph System
         C[Validate Search Input]
         D[Query Appointment Records]
         E[Display Search Results]
-        F[Display "No Results Found" Message]
+        F[Display 'No Results Found' Message]
     end
     A --> B
     B --> C
@@ -331,7 +326,7 @@ flowchart TD
     subgraph System
         A[Start: User Initiates Exit]
         B[Trigger Auto-Save Process]
-        C[Save Appointment Data to File (appointments.txt)]
+        C[Save Appointment Data to File]
         D[Confirm Successful Save]
         E[Terminate Session]
     end
