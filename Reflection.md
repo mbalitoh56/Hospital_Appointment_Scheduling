@@ -12,11 +12,11 @@ We aimed for a **balance between clarity and completeness**, especially for crit
 
 Another challenge was **mapping UML diagrams to Agile artifacts** such as user stories and sprint tasks. Agile user stories often describe *what* the user wants (“As a patient, I want to cancel my appointment”) without prescribing *how* it should be implemented. Translating that into precise UML transitions or workflows required close reading of the user stories and functional requirements.
 
-To address this, we used a **traceability matrix** to map diagrams to specific user stories and functional requirements, ensuring that **each diagram had a direct purpose** tied to a real stakeholder need.
+To address this, I used a **traceability matrix** to map diagrams to specific user stories and functional requirements, ensuring that **each diagram had a direct purpose** tied to a real stakeholder need.
 
 ---
 
-### ⚙️ State Diagrams vs. Activity Diagrams
+### State Diagrams vs. Activity Diagrams
 
 | Aspect              | State Diagrams                            | Activity Diagrams                               |
 |---------------------|--------------------------------------------|--------------------------------------------------|
