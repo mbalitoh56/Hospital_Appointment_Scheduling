@@ -1,5 +1,5 @@
-
-### ✅ Suggested Objects:
+# 8 Critical Objects
+### Critical Objects:
 1. Appointment  
 2. User Account  
 3. Doctor Availability  
@@ -10,9 +10,8 @@
 8. Admin Action  
 
 ---
-
-## 1. **Appointment**  
-
+##  State Transition Diagram
+### 1. **Appointment**  
 
 ```mermaid
 stateDiagram-v2
@@ -25,7 +24,7 @@ stateDiagram-v2
     Canceled --> Archived : After a period of time
 ```
 
-### 📝 Explanation:
+### Explanation:
 - **Key States:**
   - `Requested`: Patient books an appointment.
   - `Confirmed`: Doctor confirms the appointment.
@@ -38,32 +37,34 @@ stateDiagram-v2
   - Time passes or user cancels → Completed or Canceled.
   - Both completed and canceled appointments move to `Archived`.
 - **Functional Requirement Mapping:**
-  - *“The ‘Canceled’ state addresses FR-003: Allow users to cancel their own appointments.”*
-  - *“The ‘Completed’ state supports appointment tracking and fulfillment (FR-002 & FR-005).”*
+  - “The ‘Canceled’ state addresses FR-003: Allow users to cancel their own appointments.”
+  - “The ‘Completed’ state supports appointment tracking and fulfillment (FR-002 & FR-005).”
 
 ---
 
 
 # complex workflows
 
-✅ Suggested Workflows from Your Hospital Appointment System:
-User Registration
+### Workflows
+- User Registration
 
-Patient Books Appointment
+- Patient Books Appointment
 
-Doctor Updates Availability
+- Doctor Updates Availability
 
-Admin Cancels Appointment
+- Admin Cancels Appointment
 
-Appointment Reminder Notification
+- Appointment Reminder Notification
 
-Patient Views Appointment History
+- Patient Views Appointment History
 
-Insurance Eligibility Verification
+- Insurance Eligibility Verification
 
-System Exit with Auto-Save
+- System Exit with Auto-Save
 
-1. User Authentication & Role Management Workflow
+  # Activity Diagrams
+
+### 1. User Authentication & Role Management Workflow
 ```mermaid
 flowchart TD
     %% Swimlanes: User and System
@@ -88,9 +89,9 @@ flowchart TD
 
 ```
 
-Explanation:
+### Explanation:
 
-Key Actions & Decisions:
+**Key Actions & Decisions:**
 
 The user starts by entering credentials.
 
@@ -100,13 +101,13 @@ If valid, the system prompts the user to select a role (Patient, Doctor, or Admi
 
 If not valid, an error message is shown.
 
-Stakeholder Concerns Addressed:
+**Stakeholder Concerns Addressed:**
 
 Patients and Doctors: Ensure secure access to personalized features, meeting usability and security requirements.
 
 IT Support: Easy identification and handling of invalid login attempts.
 
-2. Appointment Booking Workflow
+### 2. Appointment Booking Workflow
 ```mermaid
 flowchart TD
     %% Swimlanes: Patient and System
@@ -131,9 +132,9 @@ flowchart TD
     F --> G
     G --> I[End]
 ```
-Explanation:
+### Explanation:
 
-Key Actions & Decisions:
+**Key Actions & Decisions:**
 
 The patient selects a doctor and a time slot.
 
@@ -145,13 +146,13 @@ If yes, the appointment is confirmed and a notification is sent.
 
 If no, an error or unavailability message is displayed.
 
-Stakeholder Concerns Addressed:
+**Stakeholder Concerns Addressed:**
 
 Patients: Quick and error-free appointment booking (< 3 minutes per appointment).
 
 Doctors & Administrators: Prevents double bookings and scheduling conflicts.
 
-3. Appointment Cancellation Workflow
+### 3. Appointment Cancellation Workflow
 ```mermaid
 flowchart TD
     %% Swimlanes: Patient and System
@@ -171,9 +172,9 @@ flowchart TD
     D --> E
     E --> G[End]
 ```
-Explanation:
+### Explanation:
 
-Key Actions & Decisions:
+**Key Actions & Decisions:**
 
 The patient initiates a cancellation request.
 
@@ -181,13 +182,13 @@ The system confirms the cancellation intent with the user.
 
 If confirmed, the appointment status is updated to “Canceled” and notifications are sent to both the doctor and patient.
 
-Stakeholder Concerns Addressed:
+**Stakeholder Concerns Addressed:**
 
 Patients and Doctors: Allows cancellations as per their need (addressing FR-003 and associated pain points).
 
 Administrators: Ensures up-to-date scheduling records to reduce manual tracking efforts.
 
-4. Doctor's Confirmation Workflow
+### 4. Doctor's Confirmation Workflow
 ```mermaid
 flowchart TD
     %% Swimlanes: Doctor and System
@@ -209,9 +210,9 @@ flowchart TD
     E --> F
     F --> G[End]
 ```
-Explanation:
+### Explanation:
 
-Key Actions & Decisions:
+**Key Actions & Decisions:**
 
 The doctor reviews pending appointments and selects one to act upon.
 
@@ -219,13 +220,13 @@ A decision is made: confirm or reject the appointment.
 
 The system updates the appointment’s status accordingly and notifies the patient.
 
-Stakeholder Concerns Addressed:
+**Stakeholder Concerns Addressed:**
 
 Doctors: Streamlined process to manage appointments and prevent overbooking.
 
 Patients: Receive timely updates on their appointment status, improving satisfaction.
 
-5. Appointment Search Workflow
+### 5. Appointment Search Workflow
 ```mermaid
 flowchart TD
     %% Swimlanes: User and System
@@ -247,9 +248,9 @@ flowchart TD
     E --> G[End]
     F --> G
 ```
-Explanation:
+### Explanation:
 
-Key Actions & Decisions:
+**Key Actions & Decisions:**
 
 The user starts a search by entering criteria such as patient name, doctor name, or date.
 
@@ -257,13 +258,13 @@ The system validates the input and queries the appointment records.
 
 Depending on the query results, either matching appointments are displayed or a "No Results Found" message is shown.
 
-Stakeholder Concerns Addressed:
+**Stakeholder Concerns Addressed:**
 
 Receptionists and Administrators: Quickly retrieve appointment details, supporting efficient scheduling and reducing manual errors.
 
 Patients: Easy access to personal appointment information.
 
-6. Notification & Reminder Dispatch Workflow
+### 6. Notification & Reminder Dispatch Workflow
 ```mermaid
 flowchart TD
     %% Swimlanes: System and Notification Service
@@ -285,9 +286,9 @@ flowchart TD
     E --> G[End]
     F --> G
 ```
-Explanation:
+### Explanation:
 
-Key Actions & Decisions:
+**Key Actions & Decisions:**
 
 The system triggers a reminder process for appointments scheduled within the next 24 hours.
 
@@ -295,13 +296,13 @@ It identifies the relevant appointments and then, in parallel, prepares both ema
 
 Both notifications are sent concurrently.
 
-Stakeholder Concerns Addressed:
+**Stakeholder Concerns Addressed:**
 
 Patients and Doctors: Receive timely reminders to reduce no-shows, addressing concerns related to missed appointments.
 
 Administrators: Automated notifications reduce manual communication efforts.
 
-7. Admin Appointment Management Workflow
+### 7. Admin Appointment Management Workflow
 ```mermaid
 flowchart TD
     %% Swimlanes: Admin and System
@@ -322,21 +323,21 @@ flowchart TD
     E --> F
     F --> G[End]
 ```
-Explanation:
+### Explanation:
 
-Key Actions & Decisions:
+**Key Actions & Decisions:**
 
 The admin accesses the management interface, selects a specific appointment, and chooses whether to cancel or reschedule it.
 
 The system processes this request, updates the appointment record accordingly, and sends notifications to both the patient and doctor.
 
-Stakeholder Concerns Addressed:
+**Stakeholder Concerns Addressed:**
 
 Hospital Administrators: Improve operational efficiency and reduce the workload associated with manual scheduling.
 
 Receptionists: Support smoother handling of last-minute changes and reduce scheduling conflicts.
 
-8. System Exit & Auto-Save Workflow
+### 8. System Exit & Auto-Save Workflow
 ```mermaid
 flowchart TD
     %% Single Swimlane: System
@@ -353,15 +354,15 @@ flowchart TD
     D --> E
     E --> F[End]
 ```
-Explanation:
+### Explanation:
 
-Key Actions & Decisions:
+**Key Actions & Decisions:**
 
 When a user chooses to exit the system, an auto-save process is immediately triggered.
 
 The system saves all current appointment data to a file (e.g., appointments.txt) in a structured format, confirms that the save was successful, and then terminates the session.
 
-Stakeholder Concerns Addressed:
+**Stakeholder Concerns Addressed:**
 
 Patients, Doctors, and Administrators: Ensures that no data is lost during system shutdown, supporting the non-functional requirement for data persistence and reliability.
 
@@ -370,13 +371,6 @@ IT Support: Minimizes risk of data corruption and maintains system integrity.
 Each diagram maps directly to specific functional requirements and stakeholder pain points mentioned in your System Requirements Document. These workflows help ensure that the system is both user-friendly and robust in handling various scenarios from authentication to data persistence.
 
 
-
-
-
-Great — this is the **Integration with Prior Work** section. It’s worth **10 Marks** and focuses on **traceability** — showing how your models connect to previously defined elements like:
-
-- ✅ **Functional Requirements (Assignment 4)**
-- ✅ **User Stories & Sprint Tasks (Assignment 6)**
 
 ---
 
