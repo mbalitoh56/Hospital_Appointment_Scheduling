@@ -11,8 +11,8 @@ This is a **Hospital Appointment System** that I created using Java to manage ap
 
 ### Assignment 8 Links
 
-[Assignment 8 folder](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/tree/6fa67baaa000b23ae6c079d92b74190ac97a6589/Assignment%208).
+[Assignment 8 folder](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/tree/6fa67baaa000b23ae6c079d92b74190ac97a6589/Assignment%208)
 
-[Activity Diagram.md](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/ca2cb1f34e96ded519fc012fd67ae675491467ec/Assignment%208/Activity%20Diagram.md).
+[Activity Diagram.md](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/ca2cb1f34e96ded519fc012fd67ae675491467ec/Assignment%208/Activity%20Diagram.md)
 
-[State Transition](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/df715f1cac7228ee5500872c32c253ae43439727/Assignment%208/State%20transition.md).
+[State Transition](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/df715f1cac7228ee5500872c32c253ae43439727/Assignment%208/State%20transition.md)
