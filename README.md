@@ -9,9 +9,9 @@ This is a **Hospital Appointment System** that I created using Java to manage ap
 
 [Architecture.md](Documentation/Architecture.md)
 
-### Assignment 8
+### Assignment 8 Links
 
-[GitHub Pages](https://pages.github.com/).
+[Assignment 8 folder](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/tree/6fa67baaa000b23ae6c079d92b74190ac97a6589/Assignment%208).
 
 [Activity Diagram.md](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/ca2cb1f34e96ded519fc012fd67ae675491467ec/Assignment%208/Activity%20Diagram.md).
 
