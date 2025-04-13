@@ -1,8 +1,6 @@
-Here’s the **Domain Model** for your **Hospital Appointment Scheduling System**, structured clearly in markdown format and aligned with your prior requirements, use cases, and behavioral models:
+# DOMAIN MODELLING
 
----
-
-## 🏥 Domain Model
+## Domain Model
 
 | **Entity** | **Attributes** | **Methods** | **Relationships** |
 |------------|----------------|-------------|-------------------|
@@ -14,21 +12,19 @@ Here’s the **Domain Model** for your **Hospital Appointment Scheduling System*
 | **Notification** | notificationID, userID, message, timestamp | send(), scheduleReminder() | Sent to Patient and Doctor |
 | **SystemSession** | sessionID, userID, loginTime, logoutTime | trackSession(), endSession() | Logs system activity for Users |
 
----
 
-## 🔁 Relationships Summary
+### Relationships Summary
 
-- **Patient books Appointment**
-- **Doctor receives Appointment**
-- **Admin manages Appointments and Users**
-- **Appointment involves Patient and Doctor**
-- **Notification sent to Patient and Doctor**
-- **User has SystemSession**
-- **User superclass inherited by Patient, Doctor, Admin**
+- Patient books Appointment
+- Doctor receives Appointment
+- Admin manages Appointments and Users
+- Appointment involves Patient and Doctor
+- Notification sent to Patient and Doctor
+- User has SystemSession
+- User superclass inherited by Patient, Doctor, Admin
 
----
 
-## 📜 Business Rules
+### Business Rules
 
 1. A **doctor** cannot be booked for more than one appointment at the same time.
 2. **Patients** can only view or cancel their own appointments.
@@ -41,18 +37,8 @@ Here’s the **Domain Model** for your **Hospital Appointment Scheduling System*
 
 ---
 
-If you’d like, I can convert this into a UML Class Diagram using Mermaid, or provide a version with composition and inheritance arrows included. Just say the word!
+# CLASS DIAGRAM
 
-
-Sure! Below is your Hospital Appointment Scheduling System modeled as a Mermaid.js class diagram, embedded in Markdown syntax. It includes:
-
-Classes with attributes and methods
-
-Inheritance and relationships
-
-Multiplicity
-
-Design decisions explanation at the bottom
 ``` mermaid
 classDiagram
     %% Abstract Base Class
@@ -134,21 +120,14 @@ classDiagram
     User "1" --> "0..*" SystemSession : initiates
 ```
 
-📝 Key Design Decisions
-Inheritance: User is abstract and generalized into Patient, Doctor, and Admin, which reflects role-based access and behavior.
+### Key Design Decisions
+**Inheritance:** User is abstract and generalized into Patient, Doctor, and Admin, which reflects role-based access and behavior.
 
-Composition: Appointment must be linked to both a Patient and a Doctor, hence 1..1 multiplicity for both.
+**Composition:** Appointment must be linked to both a Patient and a Doctor, hence 1..1 multiplicity for both.
 
-Multiplicity: Each Patient and Doctor can be involved in multiple appointments (0..*), while each Appointment is always associated with exactly one of each.
+**Multiplicity:** Each Patient and Doctor can be involved in multiple appointments (0..*), while each Appointment is always associated with exactly one of each.
 
-Separation of Concerns: Notification and SystemSession are independent support entities linked to User for reminders and login tracking respectively.
-
-Let me know if you’d like this visualized or extended with GUI classes or additional backend support classes like FileManager.
-
-
-
-
-Sure! Here's a detailed **Reflection (500+ words)** based on your Hospital Appointment Scheduling System design work:
+**Separation of Concerns:** Notification and SystemSession are independent support entities linked to User for reminders and login tracking respectively.
 
 ---
 
@@ -200,5 +179,3 @@ I learned that creating a solid domain model early on serves as a blueprint for 
 Most importantly, I learned that **clear design decisions** backed by requirement traceability improve the system’s coherence. Aligning diagrams with previous artifacts, such as use cases and state diagrams, ensures that every part of the system is justified and purposeful.
 
 ---
-
-Let me know if you'd like this saved into a document or combined with other parts of your project!
