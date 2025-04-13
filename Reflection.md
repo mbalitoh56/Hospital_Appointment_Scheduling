@@ -28,13 +28,13 @@ Additionally, the non-functional requirements like **role-based access**, **data
 
 Some trade-offs were made to maintain clarity and reduce complexity. For instance, instead of deeply modeling internal systems like `FileManager`, `AvailabilityManager`, or `ReminderService`, we focused on high-level domain entities and their primary responsibilities. This made the diagram easier to understand while leaving room for future expansion.
 
-In terms of **composition vs. inheritance**, I chose to use inheritance for user roles (`Patient`, `Doctor`, `Admin`) to reflect shared behaviors like login/logout, rather than embedding them within `User` as composed objects. This simplified role-based behavior modeling and aligned with object-oriented best practices.
+In terms of composition vs. inheritance, I chose to use inheritance for user roles (`Patient`, `Doctor`, `Admin`) to reflect shared behaviors like login/logout, rather than embedding them within `User` as composed objects. This simplified role-based behavior modeling and aligned with object-oriented best practices.
 
 Another trade-off involved leaving out fine-grained control logic (e.g., checking if an appointment is within working hours), which would typically be handled in the business logic layer, not the domain model.
 
 #### **4. Lessons Learned**
 
-This project taught me the importance of **thinking abstractly** but practically when designing systems. Object-oriented design isn’t just about representing objects but also about **responsibility assignment** and ensuring **cohesion within classes and low coupling between them**.
+This project taught me the importance of thinking abstractly but practically when designing systems. Object-oriented design isn’t just about representing objects but also about responsibility assignment and ensuring cohesion within classes and low coupling between them.
 
 I learned that creating a solid domain model early on serves as a blueprint for later development phases — including coding, testing, and UI design. Properly defining responsibilities and relationships helps avoid logic duplication and paves the way for easier maintenance and future enhancements.
 
