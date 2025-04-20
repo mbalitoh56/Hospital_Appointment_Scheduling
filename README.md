@@ -27,7 +27,7 @@ This is a **Hospital Appointment System** that I created using Java to manage ap
 
 ### Assignment 10 Links
 
-[Assignment 9 folder](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/tree/eb04e8930300a51e30b2a347a2fcfd49541683a6/Assignment%209)
+[Assignment 10 folder](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/tree/011a8ba6df0a7dbfe6ce79ef7a7a18742e56f1e0/Assignment%2010)
 
 [Domain Model](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/bbd5d8afb74ef453b32148ed81b25ff9001798ff/Assignment%209/Domain%20Model%20Document.md)
 
