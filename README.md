@@ -31,4 +31,4 @@ This is a **Hospital Appointment System** that I created using Java to manage ap
 
 [Language Choice](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/4a69b157f26c9a4bed54a3397ab165c9f3289fcc/Assignment%2010/src/README.md)
 
-[Reflection](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/8b563be4b929c13a1c8dadef8f4bc70a890aea77/Assignment%209/Reflection.md)
+[Change Log](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/70f464644a2936c7bcca347cc3009534d4af8620/Assignment%2010/CHANGELOG.md))
