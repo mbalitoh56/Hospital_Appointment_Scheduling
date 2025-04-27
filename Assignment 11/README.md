@@ -1,6 +1,6 @@
 # JUSTIFICATION
 
-## TASK 1 
+# TASK 1 
 
 **Deliverables**
 - `/repositories/Repository.java` (generic)
@@ -27,9 +27,9 @@ This approach makes it easy to create specific repositories (like `AppointmentRe
 - `/repositories/inmemory/InMemoryAppointmentRepositoryTest.java`
 ---
 
-### Justification
+## Justification
 
-## In-Memory Repository Justification
+### In-Memory Repository Justification
 I implemented an **In-Memory Appointment Repository** using a `HashMap<String, Appointment>`.
 
  - The **key** is generated from the doctor name, date, and time to ensure appointment uniqueness.
@@ -54,7 +54,7 @@ I use `doctorName_date_time` as the **unique key** since in your system, a docto
 
 ### Justification
 
-## Storage Abstraction Justification
+### Storage Abstraction Justification
 I used the **Factory Pattern** to decouple our service layer from specific storage implementations.
 
 - **Why Factory?**  
@@ -97,9 +97,9 @@ private static AppointmentRepository appointmentRepository = RepositoryFactory.g
 - Very easy for someone reading it to understand the layers and how future storage types plug in.
 
 
-## 📌 Final README Update
+## Final Update
 
-## Future-Proofing Strategy
+### Future-Proofing Strategy
 
 I created a **DatabaseAppointmentRepository** stub to prepare for future storage options.
 Using the **Repository Interface** and **Factory Pattern**, the system can easily swap between:
