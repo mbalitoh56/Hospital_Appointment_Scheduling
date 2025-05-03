@@ -1,0 +1,167 @@
+openapi: 3.0.1
+info:
+  title: Hospital Appointment Scheduling API
+  version: 1.0.0
+  description: API for managing hospital appointments, patients, doctors, and users.
+
+servers:
+  - url: http://localhost:8080/api
+
+paths:
+  /patients:
+    get:
+      summary: Get all patients
+      tags: [Patients]
+      responses:
+        '200':
+          description: A list of patients
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patient'
+    post:
+      summary: Add a new patient
+      tags: [Patients]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Patient'
+      responses:
+        '201':
+          description: Patient created
+        '400':
+          description: Invalid input
+
+  /patients/{id}:
+    get:
+      summary: Get patient by ID
+      tags: [Patients]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Patient found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Patient'
+        '404':
+          description: Patient not found
+
+  /doctors:
+    get:
+      summary: Get all doctors
+      tags: [Doctors]
+      responses:
+        '200':
+          description: A list of doctors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Doctor'
+    post:
+      summary: Add a new doctor
+      tags: [Doctors]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Doctor'
+      responses:
+        '201':
+          description: Doctor created
+        '400':
+          description: Duplicate license or invalid input
+
+  /users:
+    post:
+      summary: Register a new user
+      tags: [Users]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: User created
+        '400':
+          description: User already exists
+
+  /appointments:
+    post:
+      summary: Book a new appointment
+      tags: [Appointments]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Appointment'
+      responses:
+        '201':
+          description: Appointment booked
+        '400':
+          description: Invalid input or time conflict
+
+components:
+  schemas:
+    Patient:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        age:
+          type: integer
+      required: [id, name, age]
+
+    Doctor:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        licenseNumber:
+          type: string
+      required: [id, name, licenseNumber]
+
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        role:
+          type: string
+          enum: [admin, doctor, patient]
+      required: [id, name, role]
+
+    Appointment:
+      type: object
+      properties:
+        id:
+          type: string
+        patientId:
+          type: string
+        doctorId:
+          type: string
+        time:
+          type: string
+          format: date-time
+      required: [id, patientId, doctorId, time]
