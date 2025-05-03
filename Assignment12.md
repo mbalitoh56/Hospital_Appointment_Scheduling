@@ -109,6 +109,522 @@ public class AppointmentServiceTest {
 
 Would you like me to generate the full interfaces and entity classes used in this example?
 
+Yes, I can help you create additional service classes for your hospital appointment scheduling system. Here are some key service classes you might need, each corresponding to core domain entities:
+
+---
+
+### ✅ **1. PatientService**
+Handles operations related to patients.
+
+```java
+public class PatientService {
+    private final PatientRepository patientRepo;
+
+    public PatientService(PatientRepository patientRepo) {
+        this.patientRepo = patientRepo;
+    }
+
+    public void registerPatient(Patient patient) {
+        // Add validation logic
+        patientRepo.save(patient);
+    }
+
+    public Optional<Patient> findPatientById(String id) {
+        return patientRepo.findById(id);
+    }
+
+    public List<Patient> getAllPatients() {
+        return patientRepo.findAll();
+    }
+
+    public void deletePatient(String id) {
+        patientRepo.delete(id);
+    }
+}
+```
+
+---
+
+### ✅ **2. DoctorService**
+Handles logic for doctor availability and profiles.
+
+```java
+public class DoctorService {
+    private final DoctorRepository doctorRepo;
+
+    public DoctorService(DoctorRepository doctorRepo) {
+        this.doctorRepo = doctorRepo;
+    }
+
+    public void addDoctor(Doctor doctor) {
+        doctorRepo.save(doctor);
+    }
+
+    public Optional<Doctor> findDoctorById(String id) {
+        return doctorRepo.findById(id);
+    }
+
+    public List<Doctor> getAllDoctors() {
+        return doctorRepo.findAll();
+    }
+
+    public void deleteDoctor(String id) {
+        doctorRepo.delete(id);
+    }
+}
+```
+
+---
+
+### ✅ **3. AppointmentService**
+Implements business rules like checking doctor availability.
+
+```java
+public class AppointmentService {
+    private final AppointmentRepository appointmentRepo;
+    private final DoctorRepository doctorRepo;
+
+    public AppointmentService(AppointmentRepository appointmentRepo, DoctorRepository doctorRepo) {
+        this.appointmentRepo = appointmentRepo;
+        this.doctorRepo = doctorRepo;
+    }
+
+    public void bookAppointment(Appointment appointment) {
+        Doctor doctor = doctorRepo.findById(appointment.getDoctorId())
+            .orElseThrow(() -> new IllegalArgumentException("Doctor not found"));
+
+        if (!doctor.isAvailable(appointment.getTimeSlot())) {
+            throw new IllegalStateException("Doctor is not available at this time");
+        }
+
+        appointmentRepo.save(appointment);
+    }
+
+    public List<Appointment> getAppointmentsForPatient(String patientId) {
+        return appointmentRepo.findByPatientId(patientId);
+    }
+
+    public void cancelAppointment(String appointmentId) {
+        appointmentRepo.delete(appointmentId);
+    }
+}
+```
+
+---
+
+Would you like me to generate the actual `.java` files or add test cases for these service classes?
+
+// /test/services/PatientServiceTest.java
+package services;
+
+import models.Patient;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import repositories.PatientRepository;
+
+import java.util.Optional;
+
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+class PatientServiceTest {
+
+    private PatientRepository patientRepository;
+    private PatientService patientService;
+
+    @BeforeEach
+    void setup() {
+        patientRepository = mock(PatientRepository.class);
+        patientService = new PatientService(patientRepository);
+    }
+
+    @Test
+    void shouldRegisterNewPatient() {
+        Patient patient = new Patient("p1", "Alice", 30);
+        patientService.registerPatient(patient);
+        verify(patientRepository).save(patient);
+    }
+
+    @Test
+    void shouldRetrievePatientById() {
+        Patient patient = new Patient("p1", "Alice", 30);
+        when(patientRepository.findById("p1")).thenReturn(Optional.of(patient));
+        Optional<Patient> result = patientService.getPatient("p1");
+        assertTrue(result.isPresent());
+        assertEquals("Alice", result.get().getName());
+    }
+}
+
+// /test/services/DoctorServiceTest.java
+package services;
+
+import models.Doctor;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import repositories.DoctorRepository;
+
+import java.util.Optional;
+
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+class DoctorServiceTest {
+
+    private DoctorRepository doctorRepository;
+    private DoctorService doctorService;
+
+    @BeforeEach
+    void setup() {
+        doctorRepository = mock(DoctorRepository.class);
+        doctorService = new DoctorService(doctorRepository);
+    }
+
+    @Test
+    void shouldRegisterNewDoctor() {
+        Doctor doctor = new Doctor("d1", "Dr. Smith", "Cardiology");
+        doctorService.registerDoctor(doctor);
+        verify(doctorRepository).save(doctor);
+    }
+
+    @Test
+    void shouldRetrieveDoctorById() {
+        Doctor doctor = new Doctor("d1", "Dr. Smith", "Cardiology");
+        when(doctorRepository.findById("d1")).thenReturn(Optional.of(doctor));
+        Optional<Doctor> result = doctorService.getDoctor("d1");
+        assertTrue(result.isPresent());
+        assertEquals("Dr. Smith", result.get().getName());
+    }
+}
+
+// /test/services/AppointmentServiceTest.java
+package services;
+
+import models.Appointment;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import repositories.AppointmentRepository;
+
+import java.time.LocalDateTime;
+import java.util.Optional;
+
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+class AppointmentServiceTest {
+
+    private AppointmentRepository appointmentRepository;
+    private AppointmentService appointmentService;
+
+    @BeforeEach
+    void setup() {
+        appointmentRepository = mock(AppointmentRepository.class);
+        appointmentService = new AppointmentService(appointmentRepository);
+    }
+
+    @Test
+    void shouldBookAppointment() {
+        Appointment appointment = new Appointment("a1", "p1", "d1", LocalDateTime.now());
+        appointmentService.bookAppointment(appointment);
+        verify(appointmentRepository).save(appointment);
+    }
+
+    @Test
+    void shouldGetAppointmentById() {
+        Appointment appointment = new Appointment("a1", "p1", "d1", LocalDateTime.now());
+        when(appointmentRepository.findById("a1")).thenReturn(Optional.of(appointment));
+        Optional<Appointment> result = appointmentService.getAppointment("a1");
+        assertTrue(result.isPresent());
+        assertEquals("p1", result.get().getPatientId());
+    }
+}
+
+
+Here are the additional service and unit test files for `PatientService`, `DoctorService`, and `UserService`, using the in-memory repository for testing.
+
+### **PatientService.java** (in `/services` directory)
+```java
+package com.hospital.services;
+
+import com.hospital.models.Patient;
+import com.hospital.repositories.PatientRepository;
+import java.util.Optional;
+
+public class PatientService {
+    private final PatientRepository patientRepo;
+
+    public PatientService(PatientRepository patientRepo) {
+        this.patientRepo = patientRepo;
+    }
+
+    public Patient addPatient(Patient patient) {
+        // Business logic for adding a new patient (e.g., validate age)
+        if (patient.getAge() < 0) {
+            throw new IllegalArgumentException("Age cannot be negative");
+        }
+        return patientRepo.save(patient);
+    }
+
+    public Patient getPatientById(String patientId) {
+        return patientRepo.findById(patientId)
+            .orElseThrow(() -> new RuntimeException("Patient not found"));
+    }
+
+    public void removePatient(String patientId) {
+        Patient patient = patientRepo.findById(patientId)
+            .orElseThrow(() -> new RuntimeException("Patient not found"));
+        patientRepo.delete(patientId);
+    }
+}
+```
+
+### **DoctorService.java** (in `/services` directory)
+```java
+package com.hospital.services;
+
+import com.hospital.models.Doctor;
+import com.hospital.repositories.DoctorRepository;
+import java.util.List;
+
+public class DoctorService {
+    private final DoctorRepository doctorRepo;
+
+    public DoctorService(DoctorRepository doctorRepo) {
+        this.doctorRepo = doctorRepo;
+    }
+
+    public Doctor addDoctor(Doctor doctor) {
+        // Business logic to add a new doctor (e.g., check if the doctor already exists)
+        List<Doctor> doctors = doctorRepo.findAll();
+        if (doctors.stream().anyMatch(d -> d.getLicenseNumber().equals(doctor.getLicenseNumber()))) {
+            throw new IllegalArgumentException("Doctor with this license number already exists");
+        }
+        return doctorRepo.save(doctor);
+    }
+
+    public Doctor getDoctorById(String doctorId) {
+        return doctorRepo.findById(doctorId)
+            .orElseThrow(() -> new RuntimeException("Doctor not found"));
+    }
+
+    public List<Doctor> getAllDoctors() {
+        return doctorRepo.findAll();
+    }
+}
+```
+
+### **UserService.java** (in `/services` directory)
+```java
+package com.hospital.services;
+
+import com.hospital.models.User;
+import com.hospital.repositories.UserRepository;
+import java.util.Optional;
+
+public class UserService {
+    private final UserRepository userRepo;
+
+    public UserService(UserRepository userRepo) {
+        this.userRepo = userRepo;
+    }
+
+    public User createUser(User user) {
+        // Business logic for user creation
+        if (userRepo.findById(user.getId()).isPresent()) {
+            throw new IllegalArgumentException("User with this ID already exists");
+        }
+        return userRepo.save(user);
+    }
+
+    public User getUserById(String userId) {
+        return userRepo.findById(userId)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
+    public void deleteUser(String userId) {
+        userRepo.delete(userId);
+    }
+}
+```
+
+### **PatientServiceTest.java** (Unit Test for `PatientService`)
+```java
+package com.hospital.services;
+
+import com.hospital.models.Patient;
+import com.hospital.repositories.inmemory.InMemoryPatientRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class PatientServiceTest {
+    private PatientService patientService;
+    private InMemoryPatientRepository patientRepo;
+
+    @BeforeEach
+    void setUp() {
+        patientRepo = new InMemoryPatientRepository();
+        patientService = new PatientService(patientRepo);
+    }
+
+    @Test
+    void testAddPatient() {
+        Patient patient = new Patient("1", "John Doe", 30);
+        Patient savedPatient = patientService.addPatient(patient);
+
+        assertEquals(patient, savedPatient);
+    }
+
+    @Test
+    void testAddPatientWithNegativeAge() {
+        Patient patient = new Patient("2", "Jane Doe", -5);
+        
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
+            patientService.addPatient(patient);
+        });
+        assertEquals("Age cannot be negative", thrown.getMessage());
+    }
+
+    @Test
+    void testGetPatientById() {
+        Patient patient = new Patient("3", "John Smith", 25);
+        patientService.addPatient(patient);
+
+        Patient fetchedPatient = patientService.getPatientById("3");
+        assertEquals(patient, fetchedPatient);
+    }
+
+    @Test
+    void testRemovePatient() {
+        Patient patient = new Patient("4", "Lisa White", 28);
+        patientService.addPatient(patient);
+
+        patientService.removePatient("4");
+        assertThrows(RuntimeException.class, () -> patientService.getPatientById("4"));
+    }
+}
+```
+
+### **DoctorServiceTest.java** (Unit Test for `DoctorService`)
+```java
+package com.hospital.services;
+
+import com.hospital.models.Doctor;
+import com.hospital.repositories.inmemory.InMemoryDoctorRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class DoctorServiceTest {
+    private DoctorService doctorService;
+    private InMemoryDoctorRepository doctorRepo;
+
+    @BeforeEach
+    void setUp() {
+        doctorRepo = new InMemoryDoctorRepository();
+        doctorService = new DoctorService(doctorRepo);
+    }
+
+    @Test
+    void testAddDoctor() {
+        Doctor doctor = new Doctor("1", "Dr. Smith", "ABC123");
+        Doctor savedDoctor = doctorService.addDoctor(doctor);
+
+        assertEquals(doctor, savedDoctor);
+    }
+
+    @Test
+    void testAddDoctorWithDuplicateLicense() {
+        Doctor doctor1 = new Doctor("1", "Dr. Smith", "ABC123");
+        Doctor doctor2 = new Doctor("2", "Dr. Lee", "ABC123");
+        doctorService.addDoctor(doctor1);
+
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
+            doctorService.addDoctor(doctor2);
+        });
+        assertEquals("Doctor with this license number already exists", thrown.getMessage());
+    }
+
+    @Test
+    void testGetDoctorById() {
+        Doctor doctor = new Doctor("3", "Dr. Jones", "XYZ789");
+        doctorService.addDoctor(doctor);
+
+        Doctor fetchedDoctor = doctorService.getDoctorById("3");
+        assertEquals(doctor, fetchedDoctor);
+    }
+}
+```
+
+### **UserServiceTest.java** (Unit Test for `UserService`)
+```java
+package com.hospital.services;
+
+import com.hospital.models.User;
+import com.hospital.repositories.inmemory.InMemoryUserRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class UserServiceTest {
+    private UserService userService;
+    private InMemoryUserRepository userRepo;
+
+    @BeforeEach
+    void setUp() {
+        userRepo = new InMemoryUserRepository();
+        userService = new UserService(userRepo);
+    }
+
+    @Test
+    void testCreateUser() {
+        User user = new User("1", "John Doe", "patient");
+        User savedUser = userService.createUser(user);
+
+        assertEquals(user, savedUser);
+    }
+
+    @Test
+    void testCreateUserWithExistingId() {
+        User user1 = new User("1", "John Doe", "patient");
+        userService.createUser(user1);
+
+        User user2 = new User("1", "Jane Doe", "doctor");
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
+            userService.createUser(user2);
+        });
+        assertEquals("User with this ID already exists", thrown.getMessage());
+    }
+
+    @Test
+    void testGetUserById() {
+        User user = new User("2", "Alice Brown", "doctor");
+        userService.createUser(user);
+
+        User fetchedUser = userService.getUserById("2");
+        assertEquals(user, fetchedUser);
+    }
+
+    @Test
+    void testDeleteUser() {
+        User user = new User("3", "Bob Green", "admin");
+        userService.createUser(user);
+
+        userService.deleteUser("3");
+        assertThrows(RuntimeException.class, () -> userService.getUserById("3"));
+    }
+}
+```
+
+### Summary:
+- I have created service classes for `PatientService`, `DoctorService`, and `UserService`.
+- The business logic ensures rules are followed (e.g., age validation, duplicate doctor license numbers).
+- Each service has corresponding unit tests using in-memory repositories to verify CRUD operations and business rules.
+
+Would you like me to create additional services or provide more tests for specific cases?
+
 
 # TASK 2
 
