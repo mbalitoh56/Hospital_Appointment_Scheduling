@@ -40,3 +40,9 @@ We have enabled the following protection rules on the `master` branch to ensure 
 * Ensure your commits pass all checks (e.g., GitHub Actions).
 * Only merge once approved and all checks have passed.
 
+  # Branch protection rule screenshot
+  
+![Branch Protection](https://github.com/user-attachments/assets/9f727b02-3866-4698-b3a9-cdaa04ca979e)
+
+  
+
