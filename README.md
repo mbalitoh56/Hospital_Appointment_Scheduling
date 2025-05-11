@@ -32,3 +32,75 @@ This is a **Hospital Appointment System** that I created using Java to manage ap
 [Language Choice](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/4a69b157f26c9a4bed54a3397ab165c9f3289fcc/Assignment%2010/src/README.md)
 
 [Change Log](https://github.com/mbalitoh56/Hospital_Appointment_Scheduling/blob/70f464644a2936c7bcca347cc3009534d4af8620/Assignment%2010/CHANGELOG.md)
+
+
+
+
+---
+
+# Assignment 13
+
+### ✅ How to Run Tests Locally
+
+Providing clear instructions for running tests. For a Java Maven project, include:
+
+````markdown
+### Running Tests Locally
+
+Ensure you have Java and Maven installed. Then, execute:
+
+```bash
+mvn test
+````
+
+This command runs all unit and integration tests.
+
+````
+:contentReference[oaicite:8]{index=8}
+
+### ✅ How the CI/CD Pipeline Works
+
+:contentReference[oaicite:10]{index=10}:contentReference[oaicite:12]{index=12}
+
+
+```markdown
+### CI/CD Pipeline Overview
+
+Our GitHub Actions workflow performs the following:
+
+- **On Pull Requests to `master`**:
+  - Checks out the code.
+  - Sets up the Java environment.
+  - Runs unit and integration tests.
+
+- **On Pushes to `master`**:
+  - Executes all tests.
+  - Builds the JAR artifact.
+  - Uploads the artifact to GitHub Releases.
+````
+
+
+---
+
+## 2. Configure Pull Request (PR) Checks
+
+To ensure that tests must pass before merging:
+
+1. Navigate to your repository on GitHub.
+2. Click on **Settings** > **Branches**.
+3. Under **Branch protection rules**, click **Add rule**.
+4. Specify the branch name pattern, typically `main`.
+5. Check **Require status checks to pass before merging**.
+6. Select the specific checks (e.g., your CI workflow) that must pass.
+7. Click **Create** or **Save changes**.
+
+This setup ensures that any PR failing the specified checks cannot be merged.
+
+---
+
+## 3. Screenshot of a PR Blocked by Failing Tests
+
+After setting up the branch protection rules, create a PR with failing tests to verify the enforcement. The PR interface will display a message indicating that merging is blocked due to failing checks.
+
+
+
