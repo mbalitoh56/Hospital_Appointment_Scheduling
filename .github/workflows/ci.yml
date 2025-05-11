@@ -4,7 +4,7 @@ on:
   push:
     branches: ["**"]  # Triggers on push to any branch
   pull_request:
-    branches: ["main"]  # Triggers on PRs to main
+    branches: ["master"]  # Triggers on PRs to main
 
 jobs:
   build-and-test:
