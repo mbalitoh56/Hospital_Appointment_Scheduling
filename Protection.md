@@ -1,5 +1,3 @@
-# PROTECTION.md
-
 ## 🔒 Branch Protection Rules for `master`
 
 ### ✔️ Rule Summary
