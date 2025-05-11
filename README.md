@@ -102,5 +102,22 @@ This setup ensures that any PR failing the specified checks cannot be merged.
 
 After setting up the branch protection rules, create a PR with failing tests to verify the enforcement. The PR interface will display a message indicating that merging is blocked due to failing checks.
 
+## Screenshots
+
+### Test Results
+
+![1](https://github.com/user-attachments/assets/8803cc3c-8b34-4418-8271-34792a495065)
+
+![2](https://github.com/user-attachments/assets/002b0ee9-3aae-4885-9549-01e815fe8fed)
+
+### Artifacts failed
+
+![4](https://github.com/user-attachments/assets/f9c33935-a54d-436e-aceb-d260bf36bbdb)
+
+
+
+### Blocked by Failing Tests
+
+![3](https://github.com/user-attachments/assets/9443121f-28ba-41b5-865f-53fbd3db529e)
 
 
