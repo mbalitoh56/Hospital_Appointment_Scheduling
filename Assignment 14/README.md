@@ -1,13 +1,10 @@
-Certainly! Here's an updated `README.md` for your Hospital Appointment Scheduling System project, incorporating a comprehensive "Getting Started" section and a "Features for Contribution" table to guide new contributors.
+# Features for Contribution
 
----
 
-````markdown
 # 🏥 Hospital Appointment Scheduling System
 
 A comprehensive Java Spring Boot application designed to streamline hospital appointment scheduling, enhancing patient care and administrative efficiency.
 
----
 
 ## 🚀 Getting Started
 
@@ -26,7 +23,7 @@ Follow these steps to set up and run the project locally:
    ```bash
    git clone https://github.com/yourusername/hospital-appointment-scheduling.git
    cd hospital-appointment-scheduling
-````
+
 
 2. **Build the Project**
 
@@ -80,15 +77,4 @@ We welcome contributions to enhance the system. Below is a list of features open
 
 We appreciate your interest in contributing! Please refer to our [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on how to get started.
 
----
 
-*Last updated: May 16, 2025*
-
-```
-
----
-
-Feel free to customize the repository URL and feature details to match your project's specifics. Let me know if you need assistance with other documentation or setup tasks!
-::contentReference[oaicite:0]{index=0}
- 
-```
