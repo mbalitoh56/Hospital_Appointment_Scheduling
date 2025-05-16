@@ -107,75 +107,104 @@ To maintain code quality and consistency, please adhere to the following standar
 If you have questions or need assistance:
 
 * Open an issue with the `question` label.
-* Join our community discussions on [GitHub Discussions](https://github.com/yourusername/hospital-appointment-scheduling/discussions).
+* Join our community discussions on [GitHub Discussions](https://github.com/yourusername/hospital_appointment_scheduling/discussions).
 
 We appreciate your contributions and look forward to collaborating with you!
 
 
 ---
 
+
 # Tag Issues for Contributors
 
 
-To enhance your Hospital Appointment Scheduling System repository for contributors, follow these steps to label issues effectively:
+Certainly! Below is the content for a `TAGS.md` file, designed to guide contributors on how to find and utilize labeled issues in your GitHub repository.
 
 ---
 
-## 🏷️ 1. Create and Apply Labels
+# 🏷️ TAGS.md: Navigating Labeled Issues
 
-### A. Create Labels
+Welcome to the Hospital Appointment Scheduling System project! This guide will help you find and understand issues labeled for contribution.
 
-1. **Navigate to the Repository**: Go to your GitHub repository.
-2. **Access Labels**:
+## 🔍 Finding Labeled Issues
 
-   * Click on the **Issues** tab.
-   * Click on the **Labels** button.
-3. **Create New Labels**:
+To discover issues by label:
 
-   * Click on **New label**.
-   * For a beginner-friendly task, enter:
+1. **Navigate to the Issues Tab**:
 
-     * **Label name**: `good first issue`
-     * **Description**: `Simple tasks suitable for newcomers.`
-   * For feature enhancements, enter:
+   * Go to the repository's main page.
+   * Click on the **"Issues"** tab.
 
-     * **Label name**: `feature-request`
-     * **Description**: `Suggestions for new features or enhancements.`
-   * Choose distinct colors for each label to differentiate them visually.
-   * Click **Create label** to save.([GitHub Docs][1], [Steve Gordon - Code with Steve][2], [GitHub][3])
+2. **Filter by Labels**:
 
-### B. Apply Labels to Issues
+   * On the right sidebar, locate the **"Labels"** section.
+   * Click on a label (e.g., `good first issue` or `feature-request`) to filter issues accordingly.
 
-1. **Select an Issue**: Click on an existing issue or create a new one.
-2. **Assign Labels**:
+3. **Use the Search Bar**:
 
-   * On the right sidebar, click on the **Labels** section.
-   * Select the appropriate label(s) (`good first issue` or `feature-request`).
-   * The label will now appear on the issue, making it easier for contributors to identify.([Stack Overflow][4])
+   * At the top of the Issues page, use the search bar to input queries like:
 
-*Note*: Only users with write or triage permissions can create and assign labels. ([GitHub Docs][1])
+     * `is:issue is:open label:"good first issue"`
+     * `is:issue is:open label:"feature-request"`
+
+   * To filter issues that have both labels:
+
+     * `is:issue is:open label:"good first issue" label:"feature-request"`
+
+   * To filter issues that have either label:
+
+     * `is:issue is:open label:"good first issue","feature-request"`
+
+   *Note*: Using a comma between labels applies a logical OR, while separating labels with spaces applies a logical AND.&#x20;
+
+## 🏁 Understanding Common Labels
+
+* **`good first issue`**: Ideal for newcomers; these issues are well-defined and don't require deep knowledge of the codebase.
+
+* **`feature-request`**: Suggestions for new features or enhancements to the project.
+
+## 🤝 Getting Started
+
+1. **Choose an Issue**:
+
+   * Browse through the labeled issues and select one that interests you.
+
+2. **Express Interest**:
+
+   * Comment on the issue to let others know you're working on it.
+
+3. **Fork the Repository**:
+
+   * Click on the **"Fork"** button at the top-right corner of the repository page.
+
+4. **Clone Your Fork**:
+
+   * Use `git clone` to clone your forked repository to your local machine.
+
+5. **Create a New Branch**:
+
+   * Use `git checkout -b your-branch-name` to create and switch to a new branch.
+
+6. **Make Your Changes**:
+
+   * Implement the necessary changes or additions.
+
+7. **Commit and Push**:
+
+   * Commit your changes with a descriptive message and push them to your forked repository.
+
+8. **Submit a Pull Request**:
+
+   * Navigate to the original repository and click on **"New Pull Request"**.
+   * Provide a clear description of your changes and reference the issue number.
+
+## 📘 Additional Resources
+
+* [GitHub Docs: Managing Labels](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels)
+* [GitHub Docs: Filtering and Searching Issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/filtering-and-searching-issues-and-pull-requests)
 
 ---
 
-## 📌 2. Labeling Strategy
-
-* **Good First Issues**:
-
-  * Aim to label at least **5 issues** as `good first issue`.
-  * These should be straightforward tasks, such as fixing typos, updating documentation, or minor bug fixes.
-  * Clearly describe the task and provide guidance to help newcomers get started.
-
-* **Feature Requests**:
-
-  * Label at least **3 issues** as `feature-request`.
-  * These should be suggestions for new functionalities or enhancements, like integrating a new calendar view or adding notification features.
-  * Provide a clear description of the desired feature and its potential impact.
+Feel free to reach out if you have any questions or need further assistance!
 
 ---
-
-By implementing these labels, you make it easier for contributors to find tasks that match their skill levels and interests, fostering a more collaborative and efficient development environment. If you need assistance with automating this process or integrating it into your workflow, feel free to ask!
-
-[1]: https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels?utm_source=chatgpt.com "Managing labels - GitHub Docs"
-[2]: https://www.stevejgordon.co.uk/working-on-your-first-github-issue?utm_source=chatgpt.com "Working on Your First GitHub Issue - Steve Gordon - Code with Steve"
-[3]: https://github.com/orgs/community/discussions/53473?utm_source=chatgpt.com "How do I add a label to an issue? · community - GitHub"
-[4]: https://stackoverflow.com/questions/13829466/how-to-put-a-label-on-an-issue-in-github-if-you-are-not-a-contributor-owner?utm_source=chatgpt.com "How to put a label on an issue in GitHub if you are not a contributor ..."
