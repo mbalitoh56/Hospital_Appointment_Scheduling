@@ -1,12 +1,11 @@
-# Features for Contribution
-
-
 # 🏥 Hospital Appointment Scheduling System
+
 
 A comprehensive Java Spring Boot application designed to streamline hospital appointment scheduling, enhancing patient care and administrative efficiency.
 
+## Features for Contribution
 
-## 🚀 Getting Started
+### 🚀 Getting Started
 
 Follow these steps to set up and run the project locally:
 
@@ -51,7 +50,7 @@ Follow these steps to set up and run the project locally:
    mvn test
    ```
 
----
+
 
 ## 💡 Features for Contribution
 
