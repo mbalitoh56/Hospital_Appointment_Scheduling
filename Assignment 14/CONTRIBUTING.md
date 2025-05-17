@@ -5,7 +5,7 @@
 
 Thank you for considering contributing to our project! Your involvement helps improve the system for users and developers alike.
 
----
+
 
 ## 📦 Setup Instructions
 
@@ -18,13 +18,13 @@ Thank you for considering contributing to our project! Your involvement helps im
 ### Installation
 
 1. **Fork the Repository**  
-   Click the **Fork** button at the top right of the [repository page](https://github.com/mbalitoh56/hospital_appointment_scheduling) to create your own copy.
+   Click the **Fork** button at the top right of the [repository page](https://github.com/yourusername/hospital_appointment_scheduling) to create your own copy.
 
 2. **Clone Your Fork**  
    Open your terminal and run:
 
    ```bash
-   git clone https://github.com/mbalitoh56/hospital_appointment_scheduling.git
+   git clone https://github.com/yourusername/hospital_appointment_scheduling.git
    cd hospital_appointment_scheduling
 
 
@@ -44,7 +44,7 @@ Thank you for considering contributing to our project! Your involvement helps im
 
    Access the application at `http://localhost:8080`.
 
----
+
 
 ## 🧹 Coding Standards
 
@@ -66,7 +66,7 @@ To maintain code quality and consistency, please adhere to the following standar
 
 * **Commit Messages**: Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification for clear and descriptive commit messages.
 
----
+
 
 ## 🛠️ How to Contribute
 
@@ -107,7 +107,6 @@ To maintain code quality and consistency, please adhere to the following standar
 If you have questions or need assistance:
 
 * Open an issue with the `question` label.
-* Join our community discussions on [GitHub Discussions](https://github.com/yourusername/hospital_appointment_scheduling/discussions).
 
 We appreciate your contributions and look forward to collaborating with you!
 
@@ -115,14 +114,12 @@ We appreciate your contributions and look forward to collaborating with you!
 ---
 
 
-# Tag Issues for Contributors
+# TAGS ISSUES for CONTRIBUTORS
 
 
-Certainly! Below is the content for a `TAGS.md` file, designed to guide contributors on how to find and utilize labeled issues in your GitHub repository.
 
----
 
-# 🏷️ TAGS.md: Navigating Labeled Issues
+## Navigating Labeled Issues
 
 Welcome to the Hospital Appointment Scheduling System project! This guide will help you find and understand issues labeled for contribution.
 
@@ -203,8 +200,4 @@ To discover issues by label:
 * [GitHub Docs: Managing Labels](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels)
 * [GitHub Docs: Filtering and Searching Issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/filtering-and-searching-issues-and-pull-requests)
 
----
 
-Feel free to reach out if you have any questions or need further assistance!
-
----
