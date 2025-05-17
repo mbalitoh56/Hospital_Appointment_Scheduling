@@ -1,13 +1,8 @@
-Certainly! Here's a comprehensive `ROADMAP.md` file tailored for your Hospital Appointment Scheduling System project. This roadmap outlines the project's vision, current progress, and future enhancements to guide development and encourage community contributions.
-
----
-
-```markdown
 # 🗺️ Hospital Appointment Scheduling System Roadmap
 
 Welcome to the roadmap for the Hospital Appointment Scheduling System. This document outlines our vision, current progress, and planned features to enhance patient care and streamline hospital operations.
 
----
+
 
 ## ✅ Completed Features
 
@@ -16,7 +11,7 @@ Welcome to the roadmap for the Hospital Appointment Scheduling System. This docu
 - **Admin Dashboard**: Administrative interface to manage users, appointments, and system settings.
 - **Basic Notifications**: Email confirmations for appointment bookings.
 
----
+
 
 ## 🚧 In Progress
 
@@ -24,7 +19,7 @@ Welcome to the roadmap for the Hospital Appointment Scheduling System. This docu
 - **Appointment Reminders**: Automated email/SMS reminders for upcoming appointments.
 - **Doctor Availability Management**: Doctors can set and update their availability slots.
 
----
+
 
 ## 📝 Planned Features
 
@@ -62,7 +57,7 @@ Welcome to the roadmap for the Hospital Appointment Scheduling System. This docu
 - **Payment Gateways**: Facilitate online payments for consultations and services.
 - **Telemedicine Support**: Incorporate video conferencing tools for remote consultations.
 
----
+
 
 ## 🌟 Future Considerations
 
@@ -70,7 +65,7 @@ Welcome to the roadmap for the Hospital Appointment Scheduling System. This docu
 - **Chatbot Assistance**: Implement a chatbot to assist patients with common queries and appointment bookings.
 - **Feedback System**: Collect and analyze patient feedback post-appointment for quality improvement.
 
----
+
 
 ## 🤝 Contributing
 
@@ -86,9 +81,5 @@ For detailed contribution guidelines, refer to [CONTRIBUTING.md](./CONTRIBUTING.
 
 ---
 
-*Last updated: May 16, 2025*
-```
+*Last updated: May 17, 2025*
 
----
-
-Feel free to customize this roadmap to align with your project's specific goals and timelines. Let me know if you need assistance with any other documentation or setup tasks!
