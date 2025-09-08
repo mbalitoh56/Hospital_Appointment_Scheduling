@@ -136,4 +136,99 @@ sequenceDiagram
     Backend->>DB: Save Payment & Update Invoice Status
     Backend-->>Frontend: Payment Confirmation
     Frontend-->>Client: Display Payment Status
+```
+
+# NEW
+
+## High-Level Architecture
+```mermaid
+flowchart TD
+    User["End User"] --> UI["Frontend - Angular or React"]
+    UI --> API["Backend API - Spring Boot or Node.js"]
+    API --> DB["Database: PostgreSQL or MySQL"]
+    API --> Reports["Reporting Service"]
+    Reports --> Export["Export Formats: PDF, Excel, CSV"]
+
+```
+
+## Entity Relationship Diagram (ERD)
+```mermaid
+erDiagram
+    CUSTOMER ||--o{ QUOTE : "requests"
+    CUSTOMER ||--o{ INVOICE : "receives"
+    CUSTOMER ||--o{ PAYMENT : "makes"
+
+    QUOTE ||--o{ QUOTELINEITEM : "contains"
+    INVOICE ||--o{ INVOICELINEITEM : "contains"
+
+    INVOICE ||--o{ PAYMENT : "paid_by"
+    INVOICE ||--o{ CREDITNOTE : "adjusted_by"
+    
+    TEMPLATE ||--o{ QUOTE : "applied_to"
+    TEMPLATE ||--o{ INVOICE : "applied_to"
+
+    REPORT ||--o{ CUSTOMER : "analyzes"
+    REPORT ||--o{ INVOICE : "analyzes"
+    REPORT ||--o{ PAYMENT : "analyzes"
+```
+
+## Quote Workflow
+```mermaid
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Review : "Submit for approval"
+    Review --> Approved : "Manager approves"
+    Review --> Rejected : "Manager rejects"
+    Approved --> Sent : "Send to customer"
+    Sent --> Converted : "Convert to Sales Order"
+    Sent --> Expired : "Expiration date passed"
+    Converted --> [*]
+    Expired --> [*]
+```
+
+## Invoice Workflow
+```mermaid
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Sent : "Send to customer"
+    Sent --> Paid : "Payment received"
+    Sent --> Overdue : "Past due date"
+    Overdue --> Paid : "Customer settles"
+    Overdue --> WrittenOff : "Write-off decision"
+    Paid --> [*]
+    WrittenOff --> [*]
+```
+
+## Recurring Invoice Workflow
+```mermaid
+flowchart LR
+    Template["Recurring Invoice Template"] --> Schedule["Billing Schedule - Monthly/Quarterly/Yearly"]
+    Schedule --> AutoGen["Automatic Invoice Generation"]
+    AutoGen --> Notify["Customer Notification"]
+    AutoGen --> Invoice["Invoice Created"]
+    Invoice --> Payment["Payment Tracking"]
+```
+
+## Overdue Collection Workflow
+```mermaid
+flowchart TD
+    Overdue["Overdue Invoice"] --> Reminder1["Automated Reminder #1"]
+    Reminder1 --> Reminder2["Automated Reminder #2"]
+    Reminder2 --> Collection["Collection Workflow"]
+    Collection --> Communication["Customer Communication"]
+    Communication --> Resolution["Payment / Write-off / Legal Action"]
+```
+
+## Reporting Dashboard
+```mermaid
+flowchart TD
+    Reports["Reports Module"] --> Aging["Invoice Aging Report"]
+    Reports --> Sales["Sales Analysis"]
+    Reports --> PaymentPerf["Payment Performance"]
+    Reports --> Overdue["Overdue & Collections"]
+    Reports --> Tax["Tax Reports"]
+    Reports --> Custom["Custom Report Builder"]
+
+
+
 
